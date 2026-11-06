@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الإيجاز — المختبر البلاغي الذهبي</title>
+<meta name="description" content="منصة تفاعلية لباب الإيجاز من علم المعاني (ص ١٠٨–١١٩): شرح، شواهد مترجمة إلى الملايوية، كاشف للمحذوف، محاكيات، وتدريبات مع التصحيح والتحليل. إعداد Dr. Mohd Taufiq bin Abd Talib، FKI UniSZA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Cinzel:wght@600;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ================= TOKENS ================= */
+:root{
+  --bg:#140207; --bg2:#2a0611;
+  --panel:rgba(62,10,24,.58); --panel-2:rgba(88,16,34,.5); --solid:#21050c;
+  --line:rgba(242,196,90,.18); --line-strong:rgba(242,196,90,.5);
+  --text:#f9ecd2; --muted:#cfae9c;
+  --gold:#f2c45a; --gold2:#ffe7a3; --gold3:#b8862b;
+  --rose:#ff4d79; --ok:#3fe0a0; --bad:#ff5a73; --cyan:#62d8ff; --violet:#c49bff;
+  --on-gold:#2a0611;
+  --glow:0 0 22px rgba(242,196,90,.38); --glow-r:0 0 22px rgba(255,77,121,.38);
+  --shadow:0 26px 60px rgba(0,0,0,.55); --r:22px; --ar:30px;
+}
+[data-theme="light"]{
+  --bg:#fbf2e2; --bg2:#f3e2c6;
+  --panel:rgba(255,251,242,.82); --panel-2:rgba(250,236,214,.9); --solid:#fffaf0;
+  --line:rgba(122,24,44,.16); --line-strong:rgba(122,24,44,.4);
+  --text:#3a0913; --muted:#7a4a42;
+  --gold:#a8730f; --gold2:#7d530a; --gold3:#c99a3c;
+  --rose:#b5123f; --ok:#0f8a5c; --bad:#c41d3d; --cyan:#0b6f94; --violet:#6a3fc4;
+  --on-gold:#fffaf0;
+  --glow:0 0 14px rgba(168,115,15,.25); --glow-r:0 0 14px rgba(181,18,63,.2); --shadow:0 18px 40px rgba(90,20,30,.14);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Naskh Arabic','Amiri',serif;background:var(--bg);color:var(--text);line-height:1.9;overflow-x:hidden;font-size:17.5px;transition:background .5s,color .5s}
+body::before{content:"";position:fixed;inset:0;z-index:-4;pointer-events:none;
+  background:radial-gradient(60vw 50vh at 85% -10%,rgba(160,20,52,.55),transparent 65%),radial-gradient(50vw 60vh at -10% 40%,rgba(120,12,38,.5),transparent 65%),radial-gradient(70vw 50vh at 50% 120%,rgba(242,196,90,.12),transparent 60%),linear-gradient(180deg,var(--bg),var(--bg2))}
+[data-theme="light"] body::before{background:radial-gradient(60vw 50vh at 85% -10%,rgba(200,60,80,.14),transparent 65%),radial-gradient(70vw 50vh at 50% 120%,rgba(242,196,90,.25),transparent 60%),linear-gradient(180deg,var(--bg),var(--bg2))}
+body::after{content:"";position:fixed;inset:0;z-index:-3;pointer-events:none;opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23f2c45a' stroke-width='1.2'%3E%3Crect x='30' y='30' width='60' height='60'/%3E%3Crect x='30' y='30' width='60' height='60' transform='rotate(45 60 60)'/%3E%3Ccircle cx='60' cy='60' r='16'/%3E%3Cpath d='M0 0L30 30M120 0L90 30M0 120L30 90M120 120L90 90'/%3E%3C/g%3E%3C/svg%3E");
+  -webkit-mask-image:radial-gradient(ellipse at 50% 35%,#000 15%,transparent 75%);mask-image:radial-gradient(ellipse at 50% 35%,#000 15%,transparent 75%)}
+[data-theme="light"] body::after{opacity:.12}
+#stars{position:fixed;inset:0;z-index:-2;pointer-events:none}
+#fx{position:fixed;inset:0;z-index:300;pointer-events:none}
+a{color:inherit;text-decoration:none}
+button,input,select{font-family:inherit;color:inherit}
+button{cursor:pointer;border:none;background:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+.lat{font-family:'Space Grotesk',sans-serif;direction:ltr;unicode-bidi:isolate}
+.cin{font-family:'Cinzel',serif;direction:ltr;unicode-bidi:isolate}
+.ar{font-family:'Amiri',serif;font-size:var(--ar);line-height:2;font-weight:700}
+.muted{color:var(--muted)}
+[hidden]{display:none!important}
+.gold-text{background:linear-gradient(100deg,var(--gold3),var(--gold2) 30%,var(--gold) 50%,#fff6d6 60%,var(--gold) 72%,var(--gold3));background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 5s linear infinite}
+@keyframes sheen{to{background-position:-220% 0}}
+.glass{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);box-shadow:var(--shadow);position:relative}
+.edge::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.2px;pointer-events:none;background:linear-gradient(135deg,var(--gold2),transparent 30%,transparent 62%,var(--gold) 85%,var(--rose));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.85}
+.kicker{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;border:1px solid var(--line-strong);font-family:'Cinzel',serif;font-weight:600;font-size:.72rem;letter-spacing:.28em;color:var(--gold);direction:ltr;background:rgba(242,196,90,.06)}
+.kicker::before{content:"✦";animation:tw 1.6s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.25;transform:scale(.6)}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:14px;font-weight:700;font-size:1.04rem;transition:transform .2s,box-shadow .25s,background .25s;position:relative;overflow:hidden}
+.btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold) 45%,var(--gold3));color:var(--on-gold);box-shadow:var(--glow)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 0 34px rgba(242,196,90,.6)}
+.btn-gold::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.6),transparent);transform:skewX(-20deg);animation:shine 3.2s infinite}
+@keyframes shine{0%{left:-60%}60%,100%{left:130%}}
+.btn-rose{background:linear-gradient(135deg,#ff6f93,var(--rose) 50%,#a3123a);color:#fff;box-shadow:var(--glow-r)}
+.btn-rose:hover{transform:translateY(-2px)}
+.btn-ghost{border:1px solid var(--line-strong);background:rgba(242,196,90,.05)}
+.btn-ghost:hover{background:rgba(242,196,90,.12);transform:translateY(-2px)}
+.btn:disabled{opacity:.45;pointer-events:none}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;border:1px solid var(--line-strong);font-size:.92rem;font-weight:600;transition:.2s;background:rgba(242,196,90,.05)}
+.chip:hover{background:rgba(242,196,90,.15)}
+.chip.on{background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--on-gold);border-color:transparent;box-shadow:var(--glow)}
+.icon-btn{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;border:1px solid var(--line);background:rgba(242,196,90,.05);font-weight:700;font-size:.85rem;transition:.2s}
+.icon-btn:hover{border-color:var(--line-strong);box-shadow:var(--glow)}
+
+/* nav */
+.scroll-line{position:fixed;top:0;right:0;height:3px;width:0;z-index:200;background:linear-gradient(90deg,var(--rose),var(--gold),var(--gold2));box-shadow:0 0 12px var(--gold)}
+nav.top{position:sticky;top:0;z-index:100;max-width:1180px;margin:10px auto 0;padding:0 12px}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 14px;border-radius:18px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.2rem;white-space:nowrap}
+.brand svg{width:38px;height:38px;filter:drop-shadow(0 0 8px var(--gold))}
+.links{display:flex;gap:2px}
+.links a{padding:6px 12px;border-radius:10px;font-weight:600;color:var(--muted);transition:.2s}
+.links a:hover,.links a.active{color:var(--text);background:rgba(242,196,90,.1)}
+.links a.active{box-shadow:inset 0 -2px 0 var(--gold)}
+.ctrls{display:flex;gap:6px;align-items:center}
+.mastery{display:flex;flex-direction:column;padding:4px 12px;border-radius:12px;border:1px solid var(--line-strong);font-size:.8rem;min-width:118px}
+.mastery b{color:var(--gold)}
+.m-bar{height:4px;border-radius:9px;background:var(--line);overflow:hidden;margin-top:3px}
+.m-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--rose),var(--gold));transition:width .8s}
+.burger{display:none}
+
+/* ================= HERO ================= */
+.hero{padding:60px 0 30px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.hero h1{font-family:'Aref Ruqaa','Amiri',serif;font-size:clamp(5rem,15vw,10rem);line-height:1.15;margin:8px 0 0;filter:drop-shadow(0 0 28px rgba(242,196,90,.45))}
+.title-wrap{position:relative;display:inline-block}
+.spark{position:absolute;color:var(--gold2);font-size:1.6rem;animation:tw 2s ease-in-out infinite;text-shadow:0 0 12px var(--gold)}
+.hero .sub{font-size:clamp(1.2rem,2.4vw,1.6rem);font-weight:700}
+.hero .sub .ms-sub{display:block;font-family:'Space Grotesk';direction:ltr;text-align:right;font-size:1rem;color:var(--muted);font-weight:500}
+.hero p.lead{color:var(--muted);max-width:580px;margin:14px 0 22px;font-size:1.12rem}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.author{display:inline-flex;align-items:center;gap:12px;padding:10px 16px;border-radius:16px;border:1px solid var(--line-strong);background:var(--panel);margin-top:22px}
+.author .av{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold2),var(--gold3));font-size:1.4rem;color:var(--on-gold)}
+.author b{display:block;font-family:'Space Grotesk';direction:ltr;text-align:right}
+.author small{color:var(--muted);font-size:.86rem}
+.medal{width:100%;max-width:470px;display:block;margin:auto;overflow:visible}
+.medal .rot{transform-box:view-box;transform-origin:250px 250px;animation:spin 40s linear infinite}
+.medal .rot.r{animation-direction:reverse;animation-duration:60s}
+.medal .rot.f{animation-duration:18s}
+@keyframes spin{to{transform:rotate(360deg)}}
+.medal .ring-text{font-family:'Amiri';font-size:17px;font-weight:700;fill:var(--gold2);letter-spacing:1px}
+.medal .core{font-family:'Aref Ruqaa','Amiri';font-size:92px;font-weight:700;fill:url(#gGold)}
+.medal .pulse{animation:pulseR 3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pulseR{50%{opacity:.35;transform:scale(1.06)}}
+.demo{margin-top:34px;padding:22px;text-align:center}
+.demo-sent{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;align-items:flex-end;margin:10px 0 4px}
+.dw{display:flex;flex-direction:column;align-items:center;gap:6px}
+.dw .w{font-family:'Amiri';font-weight:700;font-size:clamp(2.6rem,7vw,4.2rem);line-height:1.4;padding:0 18px;border-radius:18px;transition:.4s}
+.dw .l{font-size:.95rem;font-weight:700;padding:2px 14px;border-radius:99px;opacity:0;transform:translateY(-8px);transition:.5s}
+.dw.on .l{opacity:1;transform:none}
+.dw.fil .w{color:var(--gold2);text-shadow:0 0 22px rgba(242,196,90,.6)}
+.dw.fil .l{background:rgba(242,196,90,.15);color:var(--gold);border:1px solid var(--line-strong)}
+.dw.fail .w{color:#ff8fab;text-shadow:0 0 22px rgba(255,77,121,.6)}
+.dw.fail .l{background:rgba(255,77,121,.13);color:var(--rose);border:1px solid rgba(255,77,121,.5)}
+[data-theme="light"] .dw.fil .w{color:var(--gold)}[data-theme="light"] .dw.fail .w{color:var(--rose)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}
+.stat{padding:16px;text-align:center}
+.stat b{display:block;font-family:'Cinzel';font-weight:800;font-size:2.1rem;color:var(--gold);text-shadow:0 0 18px rgba(242,196,90,.4)}
+.stat span{color:var(--muted);font-weight:600;font-size:.95rem}
+
+/* ================= SECTIONS ================= */
+.sec{padding:96px 0 30px;scroll-margin-top:70px}
+.sec-head{text-align:center;margin-bottom:38px}
+.sec-head h2{font-family:'Aref Ruqaa','Amiri',serif;font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.4;margin:12px 0 4px}
+.sec-head p{color:var(--muted);max-width:720px;margin:auto;font-size:1.08rem}
+.orn{display:block;width:240px;height:22px;margin:6px auto 0}
+
+/* lesson map */
+.map-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.node{display:flex;gap:12px;align-items:center;padding:14px 16px;text-align:right;transition:.3s;overflow:hidden}
+.node:hover{transform:translateY(-4px);box-shadow:var(--shadow),var(--glow)}
+.node .n{flex:none;width:44px;height:44px;display:grid;place-items:center;font-family:'Amiri';font-weight:700;font-size:1.3rem;color:var(--gold);clip-path:polygon(50% 0,61% 15%,79% 10%,80% 28%,98% 35%,88% 50%,98% 65%,80% 72%,79% 90%,61% 85%,50% 100%,39% 85%,21% 90%,20% 72%,2% 65%,12% 50%,2% 35%,20% 28%,21% 10%,39% 15%);background:rgba(242,196,90,.14)}
+.node b{display:block;font-size:1.02rem;line-height:1.5}
+.node small{color:var(--muted);font-size:.82rem}
+.node.done{border-color:var(--gold)}
+.node.done .n{background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--on-gold);box-shadow:var(--glow)}
+.prog{margin-top:18px;display:flex;align-items:center;gap:14px;font-weight:700}
+.prog .bar{flex:1;height:10px;border-radius:9px;background:var(--line);overflow:hidden}
+.prog .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--rose),var(--gold),var(--gold2));box-shadow:0 0 12px var(--gold);transition:width .8s}
+
+/* modules */
+.mods{display:grid;gap:16px}
+.mod{border-radius:var(--r);overflow:hidden;scroll-margin-top:86px}
+.mod-h{width:100%;display:flex;align-items:center;gap:16px;padding:16px 20px;text-align:right}
+.mod-h .idx{flex:none;width:56px;height:56px;display:grid;place-items:center;font-family:'Amiri';font-weight:700;font-size:1.5rem;color:var(--gold);border:1.5px solid var(--line-strong);border-radius:16px;background:radial-gradient(circle at 50% 30%,rgba(242,196,90,.25),transparent 70%);box-shadow:var(--glow)}
+.mod-h .tt{flex:1}
+.mod-h .tt b{display:block;font-size:1.32rem;line-height:1.5}
+.mod-h .tt small{color:var(--muted)}
+.mod-h .pg{font-family:'Space Grotesk';font-size:.78rem;padding:4px 10px;border-radius:99px;border:1px solid var(--line-strong);white-space:nowrap;direction:ltr}
+.mod-h .chev{transition:transform .35s;flex:none;color:var(--gold)}
+.mod.open .chev{transform:rotate(180deg)}
+.mod.done .idx{background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--on-gold)}
+.mod-b{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s ease}
+.mod.open .mod-b{grid-template-rows:1fr}
+.mod-b>div{overflow:hidden}
+.mod-in{padding:0 20px 24px}
+.def{padding:16px 18px;border-radius:16px;background:var(--panel-2);border-right:4px solid var(--gold);font-size:1.08rem;margin-bottom:12px}
+.def b{color:var(--gold2)}[data-theme="light"] .def b{color:var(--gold)}
+.note{padding:12px 16px;border-radius:14px;background:rgba(98,216,255,.07);border:1px dashed rgba(98,216,255,.4);margin:12px 0;font-size:1rem}
+.note::before{content:"💡 تنبيه: ";font-weight:700;color:var(--cyan)}
+.ms{margin-top:14px;padding:12px 16px;border-radius:14px;background:rgba(242,196,90,.06);border:1px dashed var(--line-strong);font-family:'Space Grotesk',sans-serif;direction:ltr;text-align:left;font-size:.95rem;line-height:1.65}
+.ms::before{content:"🇲🇾 Ringkasan: ";font-weight:700;color:var(--gold)}
+.sub-h{display:flex;align-items:center;gap:10px;margin:22px 0 12px;font-size:1.15rem;font-weight:700;color:var(--gold)}
+.sub-h::before{content:"✦";color:var(--rose)}
+.sub-h::after{content:"";flex:1;height:1px;background:linear-gradient(270deg,var(--line-strong),transparent)}
+.mod-in ul.pts{padding-right:22px;display:grid;gap:6px}
+.done-row{display:flex;justify-content:center;margin-top:22px}
+.lesson-btn.is{background:rgba(63,224,160,.15);border-color:var(--ok);color:var(--ok)}
+.q{color:var(--gold2);font-weight:700}[data-theme="light"] .q{color:var(--gold)}
+.ref{font-size:.85rem;color:var(--muted);font-weight:600}
+
+/* tables */
+.tbl{overflow-x:auto;border-radius:16px;border:1px solid var(--line);margin:10px 0}
+table{width:100%;border-collapse:collapse;font-size:1rem}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:right;vertical-align:middle}
+th{color:var(--on-gold);background:linear-gradient(135deg,var(--gold2),var(--gold));font-weight:700}
+tr:nth-child(even) td{background:rgba(242,196,90,.035)}
+td.a{font-family:'Amiri';font-weight:700;font-size:1.15rem}
+
+/* parse */
+.parse{padding:16px;border-radius:18px;background:var(--panel-2);border:1px solid var(--line);margin:12px 0}
+.parse-top{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.legend{display:flex;gap:10px;flex-wrap:wrap;font-size:.82rem;font-weight:700}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-left:5px;vertical-align:middle}
+.lg-fil::before{background:var(--gold)}.lg-fail::before{background:var(--rose)}.lg-amil::before{background:var(--violet)}.lg-harf::before{background:var(--muted)}.lg-oth::before{background:var(--cyan)}
+.toks{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:8px 0}
+.tok{font-family:'Amiri';font-weight:700;font-size:calc(var(--ar) + 2px);line-height:1.7;padding:2px 14px;border-radius:14px;border:1.5px solid transparent;transition:.2s;position:relative}
+.tok:hover{transform:translateY(-3px)}
+.tok.fil{color:var(--gold2);border-color:rgba(242,196,90,.45);background:rgba(242,196,90,.08)}
+.tok.fail{color:#ff8fab;border-color:rgba(255,77,121,.55);background:rgba(255,77,121,.1);box-shadow:0 0 16px rgba(255,77,121,.25)}
+.tok.amil{color:var(--violet);border-color:rgba(196,155,255,.5);background:rgba(196,155,255,.08)}
+.tok.harf{color:var(--muted);border-color:var(--line)}
+.tok.oth{color:var(--cyan);border-color:rgba(98,216,255,.35);background:rgba(98,216,255,.05)}
+[data-theme="light"] .tok.fil{color:var(--gold)}[data-theme="light"] .tok.fail{color:var(--rose)}
+.tok.sel{box-shadow:0 0 0 2px var(--gold2),0 0 22px rgba(242,196,90,.5)}
+.irab{min-height:52px;padding:12px 16px;border-radius:14px;background:var(--solid);border:1px solid var(--line);font-size:1.02rem;animation:rise .3s}
+.irab .w{font-family:'Amiri';font-weight:700;font-size:1.25rem;color:var(--gold)}
+.irab-all{display:grid;gap:6px}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}}
+
+/* masdar machine */
+.mach{padding:20px;border-radius:20px;background:var(--panel-2);border:1px solid var(--line-strong);margin-top:14px}
+.mach-list{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.mach-stage{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center}
+.mach-box{padding:16px;border-radius:16px;background:var(--solid);border:1px solid var(--line);text-align:center;min-height:120px;display:flex;flex-direction:column;justify-content:center}
+.mach-box small{color:var(--muted);font-weight:700}
+.hl{color:#ff8fab;text-shadow:0 0 14px rgba(255,77,121,.6);border-bottom:2px dashed var(--rose);padding:0 4px}
+.hl2{color:var(--ok);text-shadow:0 0 14px rgba(63,224,160,.5);border-bottom:2px solid var(--ok);padding:0 4px}
+[data-theme="light"] .hl{color:var(--rose)}
+.gear{width:90px;height:90px;display:block;margin:auto}
+.gear g{transform-origin:45px 45px;transform-box:view-box}
+.mach.run .gear g{animation:spin 1s linear 2}
+.mach-out{transition:.5s}
+.mach.run .mach-out{animation:pop .7s .9s both}
+@keyframes pop{0%{opacity:0;transform:scale(.6)}70%{transform:scale(1.06)}100%{opacity:1;transform:scale(1)}}
+
+/* x-ray */
+.xr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:12px}
+.xr{padding:18px;border-radius:18px;background:var(--panel-2);border:1px solid var(--line);position:relative;overflow:hidden}
+.xr .src{font-size:.85rem;font-weight:700;color:var(--gold)}
+.xr .ar{text-align:center;margin:6px 0}
+.xr .tag{display:block;text-align:center;font-weight:700;padding:8px 12px;border-radius:12px;transition:.4s}
+.xr .tag.s{background:rgba(207,174,156,.1);color:var(--muted);border:1px dashed var(--line-strong)}
+.xr .tag.r{background:rgba(255,77,121,.12);color:var(--rose);border:1px solid rgba(255,77,121,.5);display:none}
+.xray-on .xr .tag.s{display:none}.xray-on .xr .tag.r{display:block;animation:rise .4s}
+.xray-on .xr::after{content:"";position:absolute;left:0;right:0;height:40%;top:-40%;background:linear-gradient(180deg,transparent,rgba(98,216,255,.18),transparent);animation:scan 1.8s linear infinite}
+@keyframes scan{to{top:100%}}
+.switch{display:inline-flex;align-items:center;gap:10px;font-weight:700;cursor:pointer;user-select:none}
+.switch .trk{width:58px;height:30px;border-radius:99px;background:var(--line);border:1px solid var(--line-strong);position:relative;transition:.3s}
+.switch .trk::after{content:"";position:absolute;top:3px;right:3px;width:22px;height:22px;border-radius:50%;background:var(--muted);transition:.3s}
+.switch.on .trk{background:rgba(242,196,90,.28)}
+.switch.on .trk::after{right:31px;background:var(--gold);box-shadow:var(--glow)}
+
+/* stepper */
+.stepper{padding:20px;border-radius:20px;background:var(--panel-2);border:1px solid var(--line-strong);margin-top:12px;text-align:center}
+.st-word{font-family:'Amiri';font-weight:700;font-size:clamp(2.6rem,8vw,4.6rem);line-height:1.6;margin:10px 0;direction:rtl}
+.st-word span{transition:.4s;display:inline}
+.seg-f{color:#ff8fab;text-shadow:0 0 16px rgba(255,77,121,.7)}
+.seg-r{color:var(--cyan);text-shadow:0 0 14px rgba(98,216,255,.6)}
+.seg-t{color:var(--gold2);text-shadow:0 0 16px rgba(242,196,90,.7)}
+.seg-x{color:var(--bad);text-decoration:line-through;opacity:.55}
+.seg-k{color:var(--ok);text-shadow:0 0 14px rgba(63,224,160,.6)}
+[data-theme="light"] .seg-f{color:var(--rose)}[data-theme="light"] .seg-t{color:var(--gold)}
+.st-dots{display:flex;justify-content:center;gap:8px;margin:6px 0 12px}
+.st-dots i{width:34px;height:6px;border-radius:9px;background:var(--line);transition:.3s}
+.st-dots i.on{background:linear-gradient(90deg,var(--gold),var(--rose));box-shadow:var(--glow)}
+.st-exp{min-height:64px;padding:12px 16px;border-radius:14px;background:var(--solid);border:1px solid var(--line);font-weight:600;animation:rise .3s}
+.st-ctrl{display:flex;justify-content:center;gap:10px;margin-top:12px;flex-wrap:wrap}
+
+/* swap / generators */
+.gen{padding:20px;border-radius:20px;background:var(--panel-2);border:1px solid var(--line-strong);margin-top:12px}
+.gen-ctrl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;margin-bottom:12px}
+.gen-ctrl .lbl{font-weight:700;color:var(--muted);margin-left:4px}
+.gen-out{text-align:center;font-family:'Amiri';font-weight:700;font-size:clamp(2.2rem,6vw,3.6rem);line-height:1.7;min-height:1.7em}
+.gen-out .sfx{color:var(--cyan);text-shadow:0 0 16px rgba(98,216,255,.7);border-bottom:3px solid var(--cyan)}
+.gen-out .fa{color:#ff8fab;text-shadow:0 0 16px rgba(255,77,121,.6)}
+[data-theme="light"] .gen-out .fa{color:var(--rose)}
+.gen-info{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+.gi{padding:10px 12px;border-radius:12px;background:var(--solid);border:1px solid var(--line);text-align:center}
+.gi small{display:block;color:var(--muted);font-size:.8rem;font-weight:700}
+.gi b{font-size:1rem}
+.anim-in{animation:pop .5s both}
+
+/* cards */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
+.card2{padding:18px;border-radius:18px;background:var(--panel-2);border:1px solid var(--line)}
+.card2 h4{font-size:1.15rem;margin-bottom:6px;color:var(--gold)}
+.ghost{color:var(--ok);font-weight:700;opacity:0;transition:.5s;display:inline-block}
+.ghost.on{opacity:1;text-shadow:0 0 14px rgba(63,224,160,.6)}
+.verdict{display:block;margin-top:10px;padding:10px 14px;border-radius:12px;font-weight:700;text-align:center}
+.v-ok{background:rgba(63,224,160,.1);color:var(--ok);border:1px solid rgba(63,224,160,.45)}
+.v-bad{background:rgba(255,90,115,.1);color:var(--bad);border:1px solid rgba(255,90,115,.45)}
+.v-gold{background:rgba(242,196,90,.1);color:var(--gold);border:1px solid var(--line-strong)}
+
+/* ta'nith machine */
+.tm-res{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.tm-v{padding:14px;border-radius:16px;text-align:center;border:1px solid var(--line);background:var(--solid);transition:.4s}
+.tm-v .ar{font-size:calc(var(--ar) + 2px)}
+.tm-v .st{display:inline-block;margin-top:4px;padding:3px 14px;border-radius:99px;font-weight:700;font-size:.9rem}
+.tm-v.best{border-color:var(--gold);box-shadow:var(--glow)}
+.tm-v.best .st{background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--on-gold)}
+.tm-v.ok .st{background:rgba(63,224,160,.15);color:var(--ok)}
+.tm-v.no{opacity:.55}.tm-v.no .ar{text-decoration:line-through;text-decoration-color:var(--bad)}
+.tm-v.no .st{background:rgba(255,90,115,.12);color:var(--bad)}
+
+/* errors flip */
+.err-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.flip{perspective:1000px;height:200px;cursor:pointer}
+.flip-in{position:relative;width:100%;height:100%;transition:transform .7s cubic-bezier(.3,1.4,.5,1);transform-style:preserve-3d}
+.flip.on .flip-in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:20px;padding:18px;display:flex;flex-direction:column;justify-content:center;text-align:center;gap:6px}
+.face.f1{background:linear-gradient(160deg,rgba(255,90,115,.18),var(--panel) 60%);border:1px solid rgba(255,90,115,.45)}
+.face.f2{transform:rotateY(180deg);background:linear-gradient(160deg,rgba(63,224,160,.16),var(--panel) 60%);border:1px solid rgba(63,224,160,.5)}
+.face .big{font-size:1.8rem}
+.face p{font-weight:600}
+
+/* ================= TRAINING ================= */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:22px}
+.tab{padding:10px 16px;border-radius:14px;border:1px solid var(--line);font-weight:700;color:var(--muted);transition:.25s;background:var(--panel);display:flex;align-items:center;gap:6px}
+.tab:hover{color:var(--text);border-color:var(--line-strong)}
+.tab.on{color:var(--on-gold);background:linear-gradient(135deg,var(--gold2),var(--gold));border-color:transparent;box-shadow:var(--glow)}
+.tab .bs{font-family:'Space Grotesk';font-size:.72rem;padding:1px 7px;border-radius:99px;background:rgba(0,0,0,.18)}
+.pane{display:none}.pane.on{display:block;animation:rise .4s}
+.set{max-width:900px;margin:auto;padding:24px}
+.set-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.set-head h3{font-size:1.35rem;display:flex;align-items:center;gap:8px}
+.set-meta{display:flex;gap:8px;flex-wrap:wrap}
+.pill{padding:4px 12px;border-radius:99px;border:1px solid var(--line-strong);font-weight:700;font-size:.88rem;background:var(--solid)}
+.pill .lat{font-weight:700}
+.instr{color:var(--muted);font-size:.95rem;margin-bottom:12px}
+.dots{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.dot{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-family:'Space Grotesk';font-weight:700;font-size:.85rem;border:1px solid var(--line-strong);background:var(--solid);transition:.2s}
+.dot.ans{background:rgba(242,196,90,.2);border-color:var(--gold);color:var(--gold)}
+.dot.cur{box-shadow:0 0 0 2px var(--gold2),var(--glow)}
+.dot.ok{background:rgba(63,224,160,.2);border-color:var(--ok);color:var(--ok)}
+.dot.no{background:rgba(255,90,115,.18);border-color:var(--bad);color:var(--bad)}
+.dot.na{border-style:dashed;color:var(--muted)}
+.qcard{padding:20px;border-radius:18px;background:var(--panel-2);border:1px solid var(--line);animation:rise .35s}
+.q-top{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:8px;font-weight:700;color:var(--muted);font-size:.9rem}
+.topic-chip{padding:2px 10px;border-radius:99px;background:rgba(196,155,255,.12);color:var(--violet);border:1px solid rgba(196,155,255,.35);font-size:.8rem}
+.q-ar{text-align:center;margin:6px 0 8px;padding:10px;border-radius:14px;background:var(--solid);border:1px solid var(--line)}
+.q-t{font-size:1.2rem;font-weight:700;margin-bottom:14px;line-height:1.7}
+.opts{display:grid;gap:10px}
+.opt{display:flex;gap:12px;align-items:center;padding:13px 16px;border-radius:14px;border:1px solid var(--line-strong);background:var(--solid);text-align:right;font-weight:600;font-size:1.04rem;transition:.2s;line-height:1.6}
+.opt:hover{border-color:var(--gold);transform:translateX(-3px)}
+.opt .k{flex:none;width:32px;height:32px;border-radius:10px;display:grid;place-items:center;border:1px solid var(--line-strong);font-weight:700}
+.opt.sel{border-color:var(--gold);background:rgba(242,196,90,.12);box-shadow:var(--glow)}
+.opt.sel .k{background:var(--gold);color:var(--on-gold);border-color:transparent}
+.pick-sent{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:14px;border-radius:16px;background:var(--solid);border:1px solid var(--line);margin-bottom:10px}
+.pw{font-family:'Amiri';font-weight:700;font-size:calc(var(--ar) + 4px);line-height:1.6;padding:2px 16px;border-radius:14px;border:1.5px dashed var(--line-strong);transition:.2s}
+.pw:hover{border-color:var(--rose);color:#ff8fab}
+.pw.sel{border-style:solid;border-color:var(--rose);color:#ff8fab;background:rgba(255,77,121,.12);box-shadow:var(--glow-r)}
+[data-theme="light"] .pw.sel,[data-theme="light"] .pw:hover{color:var(--rose)}
+.extras{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.extras .opt{padding:9px 14px;font-size:.98rem}
+.bar-bot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px}
+.warn{margin-top:12px;padding:12px 16px;border-radius:14px;background:rgba(255,90,115,.1);border:1px solid rgba(255,90,115,.45);color:var(--bad);font-weight:700;animation:rise .3s}
+/* results */
+.res{animation:rise .5s}
+.res-top{display:grid;grid-template-columns:220px 1fr;gap:20px;align-items:center;padding:20px;border-radius:20px;background:radial-gradient(circle at 15% 30%,rgba(242,196,90,.18),transparent 60%),var(--panel-2);border:1px solid var(--line-strong)}
+.ring{width:200px;height:200px;display:block}
+.ring text{font-family:'Cinzel';font-weight:800;fill:var(--text)}
+.grade{font-family:'Aref Ruqaa','Amiri';font-size:2.2rem;line-height:1.4}
+.res-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px}
+.rs{padding:10px;border-radius:12px;background:var(--solid);border:1px solid var(--line);text-align:center}
+.rs b{display:block;font-family:'Space Grotesk';font-size:1.35rem}
+.rs small{color:var(--muted);font-weight:700;font-size:.8rem}
+.rs.ok b{color:var(--ok)}.rs.no b{color:var(--bad)}.rs.na b{color:var(--muted)}
+.ana{margin-top:16px;padding:18px;border-radius:18px;background:var(--panel-2);border:1px solid var(--line)}
+.ana h4{font-size:1.1rem;margin-bottom:10px;color:var(--gold)}
+.tb{display:grid;grid-template-columns:200px 1fr 64px;gap:10px;align-items:center;margin-bottom:8px;font-weight:600;font-size:.95rem}
+.tb .b{height:14px;border-radius:9px;background:var(--line);overflow:hidden}
+.tb .b i{display:block;height:100%;width:0;border-radius:9px;transition:width 1s cubic-bezier(.3,1.2,.5,1)}
+.tb .p{font-family:'Space Grotesk';font-weight:700;text-align:left}
+.weak{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 10px}
+.rv{padding:14px 16px;border-radius:16px;background:var(--solid);border:1px solid var(--line);margin-bottom:10px;border-right-width:5px}
+.rv.ok{border-right-color:var(--ok)}.rv.no{border-right-color:var(--bad)}.rv.na{border-right-color:var(--muted)}
+.rv-top{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-weight:700;margin-bottom:4px}
+.rv .mark{padding:2px 12px;border-radius:99px;font-size:.85rem}
+.rv.ok .mark{background:rgba(63,224,160,.15);color:var(--ok)}.rv.no .mark{background:rgba(255,90,115,.14);color:var(--bad)}.rv.na .mark{background:var(--line);color:var(--muted)}
+.rv .ar{font-size:calc(var(--ar) - 4px);text-align:center}
+.rv .ya{color:var(--bad);font-weight:600}.rv.ok .ya{color:var(--ok)}
+.rv .ca{color:var(--ok);font-weight:700}
+.rv .ex{margin-top:6px;padding:10px 12px;border-radius:12px;background:var(--panel-2);font-size:.98rem}
+.rv .model{margin-top:6px;padding:10px 12px;border-radius:12px;background:rgba(242,196,90,.07);border:1px dashed var(--line-strong);font-size:.98rem}
+.rv .model::before{content:"📜 الإجابة النموذجية: ";font-weight:700;color:var(--gold)}
+/* report */
+.report{max-width:900px;margin:auto;padding:28px}
+.rep-head{text-align:center;margin-bottom:16px}
+.rep-head h3{font-family:'Aref Ruqaa','Amiri';font-size:2.2rem;line-height:1.4}
+.rep-fields{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.fld{display:flex;flex-direction:column;gap:4px}
+.fld label{font-weight:700;font-size:.9rem}
+.fld input{padding:10px 12px;border-radius:12px;border:1px solid var(--line-strong);background:var(--solid);font-size:1rem;outline:none}
+.fld input:focus{border-color:var(--gold);box-shadow:var(--glow)}
+.rep-total{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:16px;flex-wrap:wrap}
+.rep-total b{font-family:'Cinzel';font-size:2.6rem;color:var(--gold)}
+.st-ok{color:var(--ok);font-weight:700}.st-no{color:var(--muted)}
+
+footer{margin-top:80px;padding:44px 16px;text-align:center;color:var(--muted);border-top:1px solid var(--line)}
+footer b{color:var(--text)}
+.credit{font-family:'Cinzel';font-size:.75rem;letter-spacing:.2em;direction:ltr;color:var(--gold)}
+.toasts{position:fixed;bottom:20px;right:20px;z-index:400;display:grid;gap:8px}
+.toast{padding:12px 18px;border-radius:14px;font-weight:700;background:var(--solid);border:1px solid var(--line-strong);box-shadow:var(--glow);animation:rise .35s}
+.top-btn{position:fixed;bottom:20px;left:20px;width:48px;height:48px;border-radius:14px;z-index:90;display:grid;place-items:center;font-size:1.3rem;opacity:0;pointer-events:none;transition:.3s}
+.top-btn.on{opacity:1;pointer-events:auto}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:1020px){
+  .links{display:none;position:absolute;top:calc(100% + 8px);right:12px;left:12px;flex-direction:column;padding:12px;border-radius:16px;background:var(--solid);border:1px solid var(--line-strong);box-shadow:var(--shadow)}
+  .links.open{display:flex}.burger{display:grid}
+  .map-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:820px){
+  .hero-grid{grid-template-columns:1fr}.medal{max-width:320px;order:-1}
+  .stats{grid-template-columns:1fr 1fr}
+  .map-grid{grid-template-columns:1fr 1fr}
+  .grid2,.xr-grid,.tm-res{grid-template-columns:1fr}
+  .err-grid{grid-template-columns:1fr 1fr}
+  .mach-stage{grid-template-columns:1fr}.gear{transform:rotate(90deg)}
+  .res-top{grid-template-columns:1fr;text-align:center}.ring{margin:auto}
+  .rep-fields{grid-template-columns:1fr}
+  .tb{grid-template-columns:130px 1fr 56px}
+}
+@media(max-width:540px){
+  body{font-size:16.5px}
+  .brand span{display:none}.mastery{min-width:0}
+  .map-grid,.err-grid{grid-template-columns:1fr}
+  .gen-info,.res-stats{grid-template-columns:1fr 1fr}
+  .mod-h{gap:10px;padding:14px}.mod-h .idx{width:46px;height:46px}.mod-h .pg{display:none}
+  .set,.report{padding:16px}
+  .ar{font-size:calc(var(--ar) - 5px)}
+  .tb{grid-template-columns:1fr 50px}.tb .b{grid-column:1/-1;grid-row:2}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+@media print{
+  body *{visibility:hidden}
+  #report-card,#report-card *{visibility:visible}
+  #report-card{position:absolute;top:0;left:0;right:0;background:#fff;color:#000;box-shadow:none;border:2px solid #7a1830}
+  #report-card .btn{display:none}
+  body::before,body::after{display:none}
+}
+
+/* ================= IJAZ ADDITIONS ================= */
+.map-grid.six{grid-template-columns:repeat(3,1fr)}
+.vs{margin:14px 0;padding:18px 20px;border-radius:18px;background:linear-gradient(160deg,rgba(242,196,90,.09),var(--panel-2) 55%);border:1px solid var(--line-strong);position:relative}
+.vs .src{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.vs .lab{font-weight:700;color:var(--gold);font-size:.98rem}
+.vs .rf{font-size:.8rem;padding:3px 10px;border-radius:99px;border:1px solid var(--line-strong);color:var(--muted);font-weight:700}
+.vs .txt{font-family:'Amiri',serif;font-size:var(--ar);line-height:2.1;font-weight:700;text-align:center;color:var(--gold2)}
+[data-theme="light"] .vs .txt{color:var(--text)}
+.vs .txt.poem{display:grid;gap:2px}
+.vs .tr{margin-top:8px;padding:10px 14px;border-radius:12px;background:rgba(0,0,0,.14);direction:ltr;text-align:left;font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-style:italic;line-height:1.6;color:var(--text)}
+[data-theme="light"] .vs .tr{background:rgba(122,24,44,.05)}
+.vs .tr::before{content:"🇲🇾 Terjemahan: ";font-style:normal;font-weight:700;color:var(--gold)}
+.vs .tq{margin-top:8px;font-weight:600}
+.vs .tq b{color:var(--rose)}
+.vs .rv-btn{margin-top:10px}
+.ins{color:#ff9db6;text-shadow:0 0 16px rgba(255,77,121,.75);border-bottom:2px dashed var(--rose);padding:0 3px;animation:popIn .6s cubic-bezier(.3,1.6,.5,1) both;display:inline-block}
+.ins.bad{color:#ffb38a;border-bottom-color:#ff8a4d;text-shadow:0 0 16px rgba(255,138,77,.7)}
+[data-theme="light"] .ins{color:var(--rose);text-shadow:none}
+.gapm{display:inline-block;color:var(--rose);animation:blink 1.2s ease-in-out infinite;font-size:.8em;padding:0 2px}
+@keyframes popIn{0%{opacity:0;transform:scale(.3) translateY(-14px)}100%{opacity:1;transform:none}}
+@keyframes blink{50%{opacity:.15}}
+/* demo */
+.dm{min-height:2.4em;font-family:'Amiri',serif;font-size:calc(var(--ar) + 4px);font-weight:700;line-height:2;color:var(--gold2);transition:opacity .4s}
+[data-theme="light"] .dm{color:var(--text)}
+.dm-steps{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:6px}
+.dm-steps span{font-size:.82rem;padding:4px 12px;border-radius:99px;border:1px solid var(--line);color:var(--muted);transition:.3s}
+.dm-steps span.on{border-color:var(--rose);color:var(--text);box-shadow:var(--glow-r)}
+/* scale (M1) */
+.scale{display:grid;gap:12px;margin-top:10px}
+.scale .row{display:grid;grid-template-columns:70px 1fr;gap:10px;align-items:center}
+.scale .bar{height:22px;border-radius:99px;background:rgba(0,0,0,.2);overflow:hidden;border:1px solid var(--line)}
+.scale .bar i{display:block;height:100%;border-radius:99px;transition:width .8s cubic-bezier(.3,1.3,.5,1)}
+.scale .bl i{background:linear-gradient(90deg,var(--gold3),var(--gold2));box-shadow:var(--glow)}
+.scale .bm i{background:linear-gradient(90deg,#a3123a,var(--rose));box-shadow:var(--glow-r)}
+.sc-out{margin-top:12px;padding:14px;border-radius:14px;background:var(--panel-2);border:1px dashed var(--line-strong);min-height:60px}
+.seg{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:6px 0 4px}
+.seg .chip.on{background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--on-gold);border-color:transparent;box-shadow:var(--glow)}
+/* qasr burst */
+.burst{display:grid;gap:12px;margin-top:10px}
+.bp{padding:12px 14px;border-radius:16px;border:1px solid var(--line-strong);background:var(--panel-2);cursor:pointer;transition:.3s;text-align:right;width:100%}
+.bp:hover{box-shadow:var(--glow)}
+.bp .ph{font-family:'Amiri';font-size:calc(var(--ar) - 2px);font-weight:700;color:var(--gold2)}
+[data-theme="light"] .bp .ph{color:var(--gold)}
+.bp .kids{display:flex;flex-wrap:wrap;gap:8px;max-height:0;overflow:hidden;transition:max-height .6s ease,margin .4s}
+.bp.on .kids{max-height:240px;margin-top:8px}
+.bp .kids span{padding:6px 12px;border-radius:99px;background:rgba(255,77,121,.12);border:1px solid rgba(255,77,121,.45);font-weight:600;font-size:.95rem;animation:popIn .5s both}
+.chain{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:12px}
+.chain .cn{padding:10px 14px;border-radius:14px;border:1px solid var(--line);background:var(--panel-2);font-weight:700;opacity:.3;transform:scale(.9);transition:.5s}
+.chain .cn.on{opacity:1;transform:none;border-color:var(--gold);box-shadow:var(--glow)}
+.chain .cn.last.on{background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--on-gold)}
+.chain .ar2{color:var(--gold);opacity:.3;transition:.5s}.chain .ar2.on{opacity:1}
+/* gate (M4) */
+.gate{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+.tg{display:flex;align-items:center;gap:12px;padding:14px;border-radius:16px;border:1px solid var(--line);background:var(--panel-2);cursor:pointer;text-align:right;transition:.3s}
+.tg .sw{flex:none;width:52px;height:28px;border-radius:99px;background:rgba(0,0,0,.3);border:1px solid var(--line-strong);position:relative;transition:.3s}
+.tg .sw::after{content:"";position:absolute;top:3px;right:3px;width:20px;height:20px;border-radius:50%;background:var(--muted);transition:.3s}
+.tg.on{border-color:var(--ok)}.tg.on .sw{background:rgba(63,224,160,.3)}.tg.on .sw::after{right:27px;background:var(--ok);box-shadow:0 0 10px var(--ok)}
+.gate-out{grid-column:1/-1;text-align:center;padding:16px;border-radius:16px;font-size:1.25rem;font-weight:700;transition:.4s;border:1.5px solid}
+.gate-out.ok{border-color:var(--ok);background:rgba(63,224,160,.1);color:var(--ok);box-shadow:0 0 24px rgba(63,224,160,.25)}
+.gate-out.no{border-color:var(--bad);background:rgba(255,90,115,.1);color:var(--bad)}
+/* hazf explorer */
+.hz-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:10px}
+.hz{padding:12px 8px;border-radius:16px;border:1px solid var(--line);background:var(--panel-2);text-align:center;transition:.3s;position:relative}
+.hz:hover{transform:translateY(-3px);border-color:var(--line-strong)}
+.hz .nn{display:block;font-family:'Amiri';font-size:1.3rem;font-weight:700;color:var(--gold)}
+.hz b{display:block;font-size:.98rem;line-height:1.4}
+.hz small{color:var(--muted);font-size:.78rem}
+.hz.on{background:linear-gradient(160deg,rgba(255,77,121,.25),var(--panel-2));border-color:var(--rose);box-shadow:var(--glow-r)}
+.hz.seen::after{content:"✓";position:absolute;top:4px;left:8px;color:var(--ok);font-weight:700}
+.hz-panel{margin-top:16px;padding:18px;border-radius:20px;border:1px solid var(--line-strong);background:var(--panel);animation:rise .4s}
+.hz-panel h4{font-size:1.3rem;color:var(--gold);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.hz-nav{display:flex;justify-content:space-between;gap:8px;margin-top:10px}
+/* story timeline */
+.st-tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:8px 0 14px}
+.tl{position:relative;display:grid;gap:10px;padding-right:26px}
+.tl::before{content:"";position:absolute;right:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--gold),var(--rose));box-shadow:var(--glow)}
+.sc{position:relative;padding:12px 16px;border-radius:16px;background:var(--panel-2);border:1px solid var(--line);font-family:'Amiri';font-size:calc(var(--ar) - 4px);font-weight:700;line-height:1.9}
+.sc::before{content:"";position:absolute;right:-23px;top:20px;width:14px;height:14px;border-radius:50%;background:var(--gold);box-shadow:var(--glow)}
+.sc.h{border:1.5px dashed var(--rose);background:rgba(255,77,121,.08);color:#ff9db6}
+[data-theme="light"] .sc.h{color:var(--rose)}
+.sc.h::before{background:var(--rose);box-shadow:var(--glow-r)}
+.sc.h .tag{font-family:'Noto Naskh Arabic';font-size:.78rem;padding:2px 10px;border-radius:99px;background:rgba(255,77,121,.18);margin-left:8px;vertical-align:middle}
+.sc.fold{padding:4px 16px;font-size:1rem;color:var(--rose);background:transparent;border:1px dashed rgba(255,77,121,.4);animation:blink 1.6s infinite;font-family:'Noto Naskh Arabic'}
+.sc.fold::before{background:transparent;border:2px dashed var(--rose);box-shadow:none}
+.sc.pop{animation:popIn .6s both}
+/* tree */
+.tree{width:100%;max-width:880px;display:block;margin:10px auto}
+.tree text{font-family:'Noto Naskh Arabic';font-weight:700;fill:var(--text)}
+.tree .nb{fill:var(--panel-2);stroke:var(--gold);stroke-width:1.5}
+.tree .nr{fill:rgba(255,77,121,.14);stroke:var(--rose);stroke-width:1.5}
+.tree .nx{fill:rgba(255,90,115,.08);stroke:var(--bad);stroke-width:1.5;stroke-dasharray:5 4}
+.tree .ln{stroke:var(--gold);stroke-width:1.6;fill:none;opacity:.7;stroke-dasharray:6 5;animation:dash 2s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-22}}
+@media(max-width:820px){.hz-grid{grid-template-columns:repeat(3,1fr)}.map-grid.six{grid-template-columns:1fr 1fr}.gate{grid-template-columns:1fr}}
+@media(max-width:540px){.hz-grid{grid-template-columns:1fr 1fr}.map-grid.six{grid-template-columns:1fr}}
+.anl{margin-top:12px;border-radius:16px;border:1px solid rgba(255,138,77,.45);background:linear-gradient(160deg,rgba(255,90,115,.10),transparent 70%);overflow:hidden}
+.anl h5{font-size:1.05rem;padding:10px 14px;background:rgba(255,90,115,.14);color:#ffb38a;display:flex;gap:8px;align-items:center}
+[data-theme="light"] .anl h5{color:var(--bad)}
+.anl .r{display:grid;grid-template-columns:150px 1fr;gap:10px;padding:10px 14px;border-top:1px solid var(--line);line-height:1.9}
+.anl .r>b{color:var(--gold)}
+.anl .r .x{color:var(--bad);font-weight:700}.anl .r .v{color:var(--ok);font-weight:700}
+.cmp td,.cmp th{vertical-align:top}
+@media(max-width:540px){.anl .r{grid-template-columns:1fr;gap:2px}}
+.uni{display:inline-flex;align-items:center;padding:10px 18px;border-radius:16px;background:#fff;border:2px solid var(--gold);box-shadow:var(--glow),0 10px 30px rgba(0,0,0,.35);margin-bottom:16px;position:relative;overflow:hidden}
+.uni img{display:block;height:78px;width:auto}
+.uni::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,231,163,.55) 50%,transparent 70%);transform:translateX(-120%);animation:uniShine 5s ease-in-out infinite}
+@keyframes uniShine{0%,60%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+footer .uni{margin:0 auto 14px}footer .uni img{height:56px}
+@media(max-width:540px){.uni img{height:46px}}
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+<canvas id="fx"></canvas>
+<div class="scroll-line" id="scroll-line"></div>
+
+<nav class="top">
+  <div class="nav-in glass edge">
+    <a href="#top" class="brand"><svg viewBox="0 0 40 40"><g fill="none" stroke="var(--gold)" stroke-width="1.6"><rect x="9" y="9" width="22" height="22"/><rect x="9" y="9" width="22" height="22" transform="rotate(45 20 20)"/></g><text x="20" y="27" text-anchor="middle" font-family="Amiri" font-size="17" font-weight="700" fill="var(--gold)">ز</text></svg><span>باب الإيجاز</span></a>
+    <div class="links" id="links">
+      <a href="#map">الخريطة</a>
+      <a href="#lessons">المباحث</a>
+      <a href="#khulasa">الخلاصة</a>
+      <a href="#train">التدريبات</a>
+    </div>
+    <div class="ctrls">
+      <div class="mastery" title="Penguasaan keseluruhan"><span><b id="nav-m">0%</b> <span class="muted">الإتقان</span></span><div class="m-bar"><i id="nav-mb"></i></div></div>
+      <button class="icon-btn lat" id="f-minus" title="Kecilkan teks Arab">A−</button>
+      <button class="icon-btn lat" id="f-plus" title="Besarkan teks Arab">A+</button>
+      <button class="icon-btn" id="theme" title="Tukar tema">☀️</button>
+      <button class="icon-btn burger" id="burger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="reveal">
+        <div><a class="uni" href="https://www.unisza.edu.my" target="_blank" rel="noopener" title="Universiti Sultan Zainal Abidin"><img src="data:image/webp;base64,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" alt="Logo Universiti Sultan Zainal Abidin (UniSZA)"></a></div>
+        <span class="kicker">AL-BALAGHAH · ‘ILM AL-MA‘ANI</span>
+        <div class="title-wrap">
+          <h1 class="gold-text">الإيجاز</h1>
+          <span class="spark" style="top:12%;right:-6%">✦</span>
+          <span class="spark" style="top:58%;left:-4%;animation-delay:.7s;font-size:1.1rem">✦</span>
+          <span class="spark" style="top:-4%;left:30%;animation-delay:1.3s;font-size:1rem">✧</span>
+        </div>
+        <div class="sub">المختبر البلاغي الذهبي لباب الإيجاز<span class="ms-sub">Al-Ijaz (Keringkasan Bermakna) — Nota interaktif, simulasi & latihan berpenilaian</span></div>
+        <p class="lead">«أقلُّ قدرٍ من الألفاظ في أكبر قدرٍ من المعنى». رحلة تفاعلية في ستة مباحث من كتاب «علم المعاني» (ص ١٠٨–١١٩)، تضمّ الشواهد كلها مع ترجمتها بالملايوية، وكاشفًا للمحذوف بنقرة، ومحاكيات ذكية، وخمسة تدريبات تُصحَّح بعد الإرسال مع تحليل مفصّل للأداء.</p>
+        <div class="hero-cta">
+          <a href="#map" class="btn btn-gold">✦ ابدأ الرحلة</a>
+          <a href="#train" class="btn btn-ghost">🎯 ساحة التدريب</a>
+        </div>
+        <div class="author">
+          <span class="av">🎓</span>
+          <span><b>Dr. Mohd Taufiq bin Abd Talib</b><small>لطلاب الدراسات الإسلامية · كلية الدراسات الإسلامية المعاصرة (FKI) · جامعة السلطان زين العابدين</small></span>
+        </div>
+      </div>
+      <svg class="medal reveal" viewBox="0 0 500 500" aria-hidden="true">
+        <defs>
+          <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff2c4"/><stop offset=".45" stop-color="#f2c45a"/><stop offset="1" stop-color="#a8730f"/></linearGradient>
+          <radialGradient id="gCore"><stop offset="0" stop-color="rgba(255,77,121,.45)"/><stop offset=".6" stop-color="rgba(120,12,38,.35)"/><stop offset="1" stop-color="rgba(120,12,38,0)"/></radialGradient>
+          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <path id="circ" d="M250,250 m-188,0 a188,188 0 1,1 376,0 a188,188 0 1,1 -376,0"/>
+        </defs>
+        <circle cx="250" cy="250" r="230" fill="url(#gCore)" class="pulse"/>
+        <g class="rot r"><circle cx="250" cy="250" r="232" fill="none" stroke="url(#gGold)" stroke-width="1.5" stroke-dasharray="2 9"/><circle cx="250" cy="18" r="6" fill="#ffe7a3" filter="url(#glow)"/><circle cx="18" cy="250" r="4" fill="#ff4d79" filter="url(#glow)"/></g>
+        <g class="rot"><text class="ring-text" text-anchor="middle"><textPath href="#circ" startOffset="50%">تقليلُ الألفاظِ وتكثيرُ المعاني ✦ قصدُ اللفظِ مع وفاءِ المعنى ✦ لكلِّ مقامٍ مقالٌ ✦ إيجازُ قِصَرٍ وإيجازُ حذفٍ ✦</textPath></text></g>
+        <g class="rot f" filter="url(#glow)"><g fill="none" stroke="url(#gGold)" stroke-width="2.2"><rect x="120" y="120" width="260" height="260"/><rect x="120" y="120" width="260" height="260" transform="rotate(45 250 250)"/></g></g>
+        <g class="rot r"><g fill="none" stroke="#ff4d79" stroke-opacity=".7" stroke-width="1.4"><rect x="150" y="150" width="200" height="200" transform="rotate(22.5 250 250)"/><rect x="150" y="150" width="200" height="200" transform="rotate(67.5 250 250)"/></g></g>
+        <circle cx="250" cy="250" r="96" fill="#2a0611" stroke="url(#gGold)" stroke-width="3"/>
+        <circle cx="250" cy="250" r="86" fill="none" stroke="#f2c45a" stroke-opacity=".35" stroke-dasharray="3 6"/>
+        <text x="250" y="278" text-anchor="middle" class="core" style="font-size:78px">إيجاز</text>
+      </svg>
+    </div>
+
+    <div class="demo glass edge reveal">
+      <span class="kicker">LIVE DECODER · كاشف المحذوف</span>
+      <div class="dm" id="demo"></div>
+      <div class="dm-steps"><span id="ds1">١. النصّ الموجز</span><span id="ds2">٢. إظهار المحذوف</span></div>
+      <p class="muted" id="demo-cap" style="min-height:1.9em;margin-top:6px"></p>
+    </div>
+
+    <div class="stats">
+      <div class="stat glass edge reveal"><b data-count="6">0</b><span>مباحث</span></div>
+      <div class="stat glass edge reveal"><b data-count="53">0</b><span>شاهدًا مترجمًا</span></div>
+      <div class="stat glass edge reveal"><b data-count="15">0</b><span>نوعًا لحذف المفرد</span></div>
+      <div class="stat glass edge reveal"><b data-count="78">0</b><span>سؤالًا وتطبيقًا</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MAP ================= -->
+<section class="sec" id="map">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">LESSON MAP · خريطة الدرس</span>
+      <h2 class="gold-text">خريطة الدرس</h2>
+      <p>انقر أي مبحث للانتقال إليه. يتوهّج المبحث ذهبيًّا بعد أن تضغط «فهمتُ هذا المبحث».</p>
+    </div>
+    <div class="map-grid six" id="map-grid"></div>
+    <div class="prog reveal"><span>تقدّمك:</span><div class="bar"><i id="prog-bar"></i></div><span class="lat" id="prog-t">0/6</span></div>
+  </div>
+</section>
+
+<!-- ================= LESSONS ================= -->
+<section class="sec" id="lessons">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">MODULES · المباحث</span>
+      <h2 class="gold-text">مباحث الإيجاز</h2>
+      <p>كل مبحث يضم الشرح، والشواهد مع ترجمتها بالملايوية، وزرًّا يُظهر المحذوف في مكانه، ومحاكيًا تفاعليًّا.</p>
+    </div>
+    <div class="mods">
+
+<!-- M1 -->
+<div class="mod glass edge" id="mod-1"><button class="mod-h" data-mod="1"><span class="idx">١</span><span class="tt"><b>منزلة الإيجاز وأحوال التعبير</b><small>الإيجاز · المساواة · الإطناب</small></span><span class="pg">p.108</span><svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="mod-b"><div><div class="mod-in">
+  <div class="def">هذا الباب أساس بناء الفصاحة، والركن الأعظم في تكوين الملكة البلاغية، حتى قال بعض العلماء: <b>«البلاغة هي الإيجاز والإطناب»</b>.</div>
+  <div class="sub-h">الخلاف في الواسطة بين الإيجاز والإطناب</div>
+  <div class="tbl"><table>
+    <tr><th>الفريق</th><th>المذهب</th><th>أثره في التقسيم</th></tr>
+    <tr><td><b>السكاكي ومن تبعه</b></td><td>إثبات واسطة هي <b class="q">المساواة</b>، وهي لا تُحمد ولا تُذمّ</td><td>الكلام ثلاثة أقسام: إيجاز، ومساواة، وإطناب</td></tr>
+    <tr><td><b>ابن الأثير ومن نحا نحوه</b></td><td>نفي الواسطة</td><td>الإيجاز غير الحذف قسمان: <b class="q">إيجاز التقدير</b> (= المساواة عند الأولين) و<b class="q">إيجاز القصر</b></td></tr>
+  </table></div>
+  <div class="note">الخلاف بينهم لفظي في التسمية لا في حقيقة المسمّى، والتقسيم الثلاثي هو الأشهر عند أئمة هذا الفن.</div>
+  <div class="sub-h">ميزان التعبير · محاكي</div>
+  <p>اختر صورة من صور التعبير لترى العلاقة بين كمية <b class="q">اللفظ</b> وكمية <b style="color:var(--rose)">المعنى</b>:</p>
+  <div class="seg" id="sc-seg"><button class="chip" data-sc="m">المساواة</button><button class="chip on" data-sc="i">الإيجاز</button><button class="chip" data-sc="t">الإطناب</button></div>
+  <div class="scale"><div class="row"><b>اللفظ</b><div class="bar bl"><i id="sc-l"></i></div></div><div class="row"><b style="color:var(--rose)">المعنى</b><div class="bar bm"><i id="sc-m"></i></div></div></div>
+  <div class="sc-out" id="sc-out"></div>
+  <div class="sub-h">شرط البلاغة: مطابقة مقتضى الحال</div>
+  <p>لا يُعدّ الكلام بليغًا في أيّ صورة من هذه الصور إلّا إذا طابق مقتضى حال المخاطَب؛ فخطاب الذكي غير خطاب الغبي، وخطاب المنكِر غير خطاب خالي الذهن. <b class="q">والبليغ من يعرف لكل مقام مقاله.</b></p>
+  <p class="ms">Kalam terbahagi kepada ijaz (lafaz sedikit, makna banyak), musawah (lafaz sama dengan makna) dan itnab (lafaz melebihi makna dengan faedah). As-Sakkaki menetapkan musawah sebagai perantara; Ibn al-Athir menafikannya — perbezaan itu hanya pada istilah. Semua bentuk hanya baligh jika menepati muqtada al-hal.</p>
+  <div class="done-row"><button class="btn btn-ghost lesson-btn" data-lesson="1">◎ فهمتُ هذا المبحث</button></div>
+</div></div></div></div>
+
+<!-- M2 -->
+<div class="mod glass edge" id="mod-2"><button class="mod-h" data-mod="2"><span class="idx">٢</span><span class="tt"><b>تعريف الإيجاز والإخلال</b><small>الإيجاز المحمود والإيجاز المعيب</small></span><span class="pg">p.108–109</span><svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="mod-b"><div><div class="mod-in">
+  <div class="tbl"><table>
+    <tr><th style="width:18%">الجانب</th><th>التعريف</th></tr>
+    <tr><td><b>لغةً</b></td><td><b class="q">التقصير</b>؛ يُقال: أوجز في كلامه إذا قصّره، وكلام وجيز: أي قصير.</td></tr>
+    <tr><td><b>اصطلاحًا</b></td><td>أن تكون الألفاظ أقلّ من المعنى الذي يُراد التعبير عنه.</td></tr>
+    <tr><td><b>خلاصة الكتاب</b></td><td>قَصْد اللفظ مع وفاء المعنى، أو استثمار أقلّ قدر من الألفاظ في أكبر قدر من المعنى.</td></tr>
+  </table></div>
+  <div class="sub-h">الإيجاز المعيب: الإخلال والحذف الرديء</div>
+  <p>إذا لم يَفِ اللفظ الموجز بالمعنى لم يكن إيجازًا بليغًا، بل كان <b style="color:var(--bad)">إخلالًا</b> و<b style="color:var(--bad)">حذفًا رديئًا</b>؛ لأن السامع لا يفهم المراد إلّا بعد إعمال فكر طويل. اضغط «أظهر المراد» لترى ما حُذف بلا قرينة:</p>
+  <div data-vs="ikh1"></div><div data-vs="ikh2"></div><div data-vs="ikh3"></div>
+  <div class="sub-h">الموازنة: الحذف البليغ والحذف الرديء</div>
+  <div class="tbl cmp"><table>
+    <tr><th style="width:22%">وجه الموازنة</th><th>الحذف البليغ (إيجاز الحذف)</th><th>الحذف الرديء (الإخلال)</th></tr>
+    <tr><td><b>مثاله</b></td><td class="ar" style="font-size:calc(var(--ar) - 8px)">﴿وَاسْأَلِ الْقَرْيَةَ﴾ [يوسف: ٨٢]</td><td class="ar" style="font-size:calc(var(--ar) - 8px)">وَالعَيْشُ خَيْرٌ فِي ظِلَالِ النَّوْكِ…</td></tr>
+    <tr><td><b>القرينة</b></td><td><span style="color:var(--ok);font-weight:700">موجودة</span>: العقل يقضي بأنّ القرية (البيوت والجدران) لا تُسأل، فالمسؤول أهلُها.</td><td><span style="color:var(--bad);font-weight:700">معدومة</span>: لا شيء في اللفظ ولا في الحال يدلّ على «الناعم» و«في ظلال العقل».</td></tr>
+    <tr><td><b>فهم السامع</b></td><td>يفهم المحذوف فورًا وبلا عناء.</td><td>لا يفهم المراد إلّا بعد تأمّل طويل، وقد يفهم عكسه.</td></tr>
+    <tr><td><b>أثر الحذف</b></td><td>قلّة اللفظ مع <b>وفاء المعنى</b> وزيادة جماله.</td><td>قلّة اللفظ مع <b>ضياع المعنى</b> أو فساده.</td></tr>
+    <tr><td><b>الحكم</b></td><td style="color:var(--ok);font-weight:700">إيجاز بليغ محمود</td><td style="color:var(--bad);font-weight:700">إخلال وحذف رديء مذموم</td></tr>
+  </table></div>
+  <div class="note">القاسم المشترك في الشواهد الثلاثة: كلّها قائمة على <b>المقابلة</b>، وفي كلٍّ منها حُذف ركنٌ من أركان المقابلة بلا قرينة؛ فبقي أحد الطرفين بلا مقابل، فاختلّ المعنى. والإيجاز لا يُحمد إلّا إذا جمع بين <b>قلّة اللفظ</b> و<b>وضوح المعنى</b>.</div>
+  <div class="def" style="border-right-color:var(--rose)">🎯 <b>الفائدة:</b> الإيجاز المحمود لا بدّ فيه من أمرين: قلّة اللفظ، ووضوح المعنى؛ فإن ضاع المعنى أو غمض صار الإيجاز إخلالًا.</div>
+  <p class="ms">Ijaz = lafaz sedikit tetapi makna sempurna. Jika lafaz yang ringkas tidak memenuhi makna, ia menjadi ikhlal (pembuangan yang buruk), kerana pendengar hanya faham selepas berfikir panjang — seperti dalam syair al-Harith bin Hillizah dan ‘Urwah bin al-Ward.</p>
+  <div class="done-row"><button class="btn btn-ghost lesson-btn" data-lesson="2">◎ فهمتُ هذا المبحث</button></div>
+</div></div></div></div>
+
+<!-- M3 -->
+<div class="mod glass edge" id="mod-3"><button class="mod-h" data-mod="3"><span class="idx">٣</span><span class="tt"><b>إيجاز القصر</b><small>معانٍ كثيرة بلا حذف</small></span><span class="pg">p.109–110</span><svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="mod-b"><div><div class="mod-in">
+  <div class="grid2">
+    <div class="card2"><h4>✦ إيجاز القصر</h4><p>عبارة قصيرة تتضمّن معاني كثيرة — <b>لا حذف فيه</b>.</p></div>
+    <div class="card2" style="border-color:rgba(255,77,121,.45)"><h4 style="color:var(--rose)">✂ إيجاز الحذف</h4><p>يُفهم المعنى مع حذف بعض اللفظ — <b>فيه حذف مع قرينة</b>.</p></div>
+  </div>
+  <div class="def" style="margin-top:14px">إيجاز القصر: <b>تقليلُ الألفاظ وتكثيرُ المعاني</b>، وقيل: هو تضمينُ العبارات القصيرة معانيَ كثيرةً من غير حذف. وهو عند ابن الأثير <b>«أعلى طبقات الإيجاز مكانًا، وأعوزها إمكانًا»</b>.</div>
+  <div data-vs="q1"></div>
+  <div data-vs="q1b"></div>
+  <div data-vs="q2"></div>
+  <div class="sub-h">مُفكِّك المعاني · انقر كل عبارة</div>
+  <div class="burst" id="burst"></div>
+  <div data-vs="q3"></div>
+  <div class="sub-h">سلسلة المعنى في ﴿وَلَكُمْ فِي الْقِصَاصِ حَيَاةٌ﴾</div>
+  <div class="chain" id="chain"></div>
+  <div style="text-align:center;margin-top:10px"><button class="btn btn-gold" id="chain-go">▶ شغّل السلسلة</button></div>
+  <div data-vs="q4"></div>
+  <p class="ms">Ijaz qasr ialah ungkapan pendek yang memuatkan makna yang sangat banyak tanpa sebarang pembuangan, dan ia peringkat ijaz tertinggi menurut Ibn al-Athir. Contoh: al-A‘raf 54, al-A‘raf 199, al-Baqarah 179 dan الضعيف أمير الركب.</p>
+  <div class="done-row"><button class="btn btn-ghost lesson-btn" data-lesson="3">◎ فهمتُ هذا المبحث</button></div>
+</div></div></div></div>
+
+<!-- M4 -->
+<div class="mod glass edge" id="mod-4"><button class="mod-h" data-mod="4"><span class="idx">٤</span><span class="tt"><b>إيجاز الحذف وشروطه</b><small>القرينة · دلالة الحال والمقال</small></span><span class="pg">p.110</span><svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="mod-b"><div><div class="mod-in">
+  <div class="def">إيجاز الحذف ما يكون بحذف بعض اللفظ، والمحذوف ثلاثة أنواع: <b>مفرد (كلمة)</b>، أو <b>جملة</b>، أو <b>جُمَل</b>.</div>
+  <div class="grid2">
+    <div class="card2"><h4>① الاستغناء</h4><p>أن يكون الكلام غيرَ محتاج إلى اللفظ المحذوف، فيُفهم المعنى دونه.</p></div>
+    <div class="card2" style="border-color:rgba(255,77,121,.45)"><h4 style="color:var(--rose)">② القرينة</h4><p>أن توجد قرينة تدلّ على المحذوف، ومنها: <b>دلالة الحال</b> و<b>دلالة المقال</b> وغيرهما.</p></div>
+  </div>
+  <div class="sub-h">بوّابة الحذف البليغ · محاكي</div>
+  <p>فعّل الشرطين أو عطّلهما لترى الحكم:</p>
+  <div class="gate">
+    <button class="tg on" data-g="0"><span class="sw"></span><span><b>المعنى مفهوم دون المحذوف</b><br><small class="muted">الكلام غير محتاج إليه</small></span></button>
+    <button class="tg on" data-g="1"><span class="sw"></span><span><b>توجد قرينة تدلّ عليه</b><br><small class="muted">دلالة الحال أو المقال</small></span></button>
+    <div class="gate-out" id="gate-out"></div>
+  </div>
+  <div class="sub-h">أقسام المحذوف</div>
+  <div class="grid2" style="grid-template-columns:repeat(3,1fr)">
+    <div class="card2" style="text-align:center"><h4>المفرد</h4><p><b class="q">١٥</b> موضعًا · ٣٩ شاهدًا</p><button class="chip" data-open="5" style="margin-top:6px">↙ المبحث ٥</button></div>
+    <div class="card2" style="text-align:center"><h4>الجملة</h4><p><b class="q">٤</b> شواهد</p><button class="chip" data-open="6" style="margin-top:6px">↙ المبحث ٦</button></div>
+    <div class="card2" style="text-align:center"><h4>الجُمَل</h4><p><b class="q">٣</b> شواهد</p><button class="chip" data-open="6" style="margin-top:6px">↙ المبحث ٦</button></div>
+  </div>
+  <p class="ms">Ijaz hadhf berlaku dengan membuang sebahagian lafaz. Dua syarat: (1) makna tetap difahami tanpa lafaz yang dibuang; (2) ada qarinah yang menunjukkannya — dilalah al-hal (keadaan) atau dilalah al-maqal (kata-kata). Yang dibuang boleh jadi satu kalimah, satu jumlah atau beberapa jumlah.</p>
+  <div class="done-row"><button class="btn btn-ghost lesson-btn" data-lesson="4">◎ فهمتُ هذا المبحث</button></div>
+</div></div></div></div>
+
+<!-- M5 -->
+<div class="mod glass edge" id="mod-5"><button class="mod-h" data-mod="5"><span class="idx">٥</span><span class="tt"><b>حذف المفرد: خمسة عشر موضعًا</b><small>٣٩ شاهدًا مع الترجمة والتقدير</small></span><span class="pg">p.110–116</span><svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="mod-b"><div><div class="mod-in">
+  <p>حذف المفرد أكثر أنواع الحذف، وقد ذكر الكتاب له <b class="q">خمسة عشر موضعًا</b>. اختر نوعًا من الشبكة، ثم اضغط «أظهر المحذوف» في كل شاهد ليظهر المحذوف متوهّجًا في مكانه:</p>
+  <div class="hz-grid" id="hz-grid"></div>
+  <div id="hz-panel"></div>
+  <p class="ms">Hazf satu kalimah ialah jenis yang paling banyak. Buku menyenaraikan 15 tempat: mubtada’, khabar, fa‘il (bagi masdar), maf‘ul, huruf al-ma‘ani, mudaf, mudaf ilaih, jar-majrur, mawsuf, sifah, syarat, jawab syarat, qasam, jawab qasam dan hal.</p>
+  <div class="done-row"><button class="btn btn-ghost lesson-btn" data-lesson="5">◎ فهمتُ هذا المبحث</button></div>
+</div></div></div></div>
+
+<!-- M6 -->
+<div class="mod glass edge" id="mod-6"><button class="mod-h" data-mod="6"><span class="idx">٦</span><span class="tt"><b>حذف الجملة والجُمَل</b><small>المشاهد المطويّة في القصص القرآني</small></span><span class="pg">p.116–119</span><svg class="chev" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="mod-b"><div><div class="mod-in">
+  <p>قد يكون المحذوف جملةً تامّة، بل جُمَلًا متعدّدة؛ فالقصص القرآني كثيرًا ما يَثِبُ إلى المشهد المهمّ، ويترك للسامع أن يصل ما لم يُذكَر من المشاهد. اختر قصة، ثم اكشف المشاهد المطويّة:</p>
+  <div class="st-tabs" id="st-tabs"></div>
+  <div class="vs" id="st-box"></div>
+  <div class="def" style="margin-top:14px">✦ <b>القيمة البلاغية:</b> سرعة القصّ، وترك ما يُدرَك بداهةً من المشاهد، وتركيز انتباه السامع على لبّ الحدث، مع إشراك عقله في بناء المشاهد المطويّة.</div>
+  <p class="ms">Yang dibuang boleh jadi satu jumlah (al-Baqarah 127, 213, 60; asy-Syu‘ara’ 63) atau beberapa jumlah sekaligus (al-Qasas 24–25; an-Naml 28–31; Yusuf 45–46). Kisah bergerak pantas dan akal pendengar menyambung sendiri babak yang tidak disebut.</p>
+  <div class="done-row"><button class="btn btn-ghost lesson-btn" data-lesson="6">◎ فهمتُ هذا المبحث</button></div>
+</div></div></div></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= SUMMARY ================= -->
+<section class="sec" id="khulasa">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">SUMMARY · الخلاصة</span>
+      <h2 class="gold-text">خلاصة الباب</h2>
+      <p>شجرة الإيجاز كما في الكتاب</p>
+    </div>
+    <svg class="tree reveal" viewBox="0 0 880 400" aria-label="شجرة الإيجاز">
+      <path class="ln" d="M440 62 C440 90 150 80 150 120"/><path class="ln" d="M440 62 L440 120"/><path class="ln" d="M440 62 C440 90 730 80 730 120"/>
+      <path class="ln" d="M730 162 C730 190 620 180 620 222"/><path class="ln" d="M730 162 C730 190 820 180 820 222"/><path class="ln" d="M730 162 C760 200 860 160 790 330" style="stroke:var(--bad)"/>
+      <path class="ln" d="M620 264 C620 300 470 290 470 330"/><path class="ln" d="M620 264 L620 330"/><path class="ln" d="M620 264 C620 300 720 300 700 330" style="display:none"/>
+      <rect class="nb" x="365" y="20" width="150" height="44" rx="14"/><text x="440" y="49" text-anchor="middle" font-size="20">الكلام</text>
+      <rect class="nb" x="75" y="120" width="150" height="44" rx="14"/><text x="150" y="149" text-anchor="middle" font-size="19">الإطناب</text>
+      <rect class="nb" x="365" y="120" width="150" height="44" rx="14"/><text x="440" y="149" text-anchor="middle" font-size="19">المساواة</text>
+      <rect class="nr" x="655" y="120" width="150" height="44" rx="14"/><text x="730" y="149" text-anchor="middle" font-size="20">الإيجاز</text>
+      <rect class="nb" x="545" y="222" width="150" height="44" rx="14"/><text x="620" y="251" text-anchor="middle" font-size="18">إيجاز الحذف</text>
+      <rect class="nb" x="750" y="222" width="125" height="44" rx="14"/><text x="812" y="251" text-anchor="middle" font-size="18">إيجاز القصر</text>
+      <rect class="nb" x="395" y="330" width="150" height="50" rx="14"/><text x="470" y="352" text-anchor="middle" font-size="16">حذف المفرد</text><text x="470" y="372" text-anchor="middle" font-size="13" style="fill:var(--gold)">١٥ موضعًا</text>
+      <rect class="nb" x="560" y="330" width="120" height="50" rx="14"/><text x="620" y="352" text-anchor="middle" font-size="16">حذف الجملة</text><text x="620" y="372" text-anchor="middle" font-size="13" style="fill:var(--gold)">٤ شواهد</text>
+      <rect class="nx" x="700" y="330" width="170" height="50" rx="14"/><text x="785" y="352" text-anchor="middle" font-size="16" style="fill:var(--bad)">الإخلال (معيب)</text><text x="785" y="372" text-anchor="middle" font-size="13" style="fill:var(--muted)">حذف بلا قرينة</text>
+      <rect class="nb" x="245" y="330" width="130" height="50" rx="14"/><text x="310" y="352" text-anchor="middle" font-size="16">حذف الجُمَل</text><text x="310" y="372" text-anchor="middle" font-size="13" style="fill:var(--gold)">٣ شواهد</text>
+      <path class="ln" d="M620 264 C620 300 310 290 310 330"/>
+    </svg>
+    <div class="tbl glass reveal"><table id="sum-tbl"></table></div>
+    <div class="sec-head reveal" style="margin-top:50px;margin-bottom:24px">
+      <h2 class="gold-text" style="font-size:clamp(1.8rem,4vw,2.6rem)">أخطاء شائعة عند الطلاب</h2>
+      <p>انقر البطاقة لتنقلب من الخطأ ✗ إلى الصواب ✓</p>
+    </div>
+    <div class="err-grid" id="err-grid"></div>
+    <div class="note reveal" style="margin-top:22px">تنبيهات على النصّ: في الكتاب «القارعة ٩–١٠» والصواب ١٠–١١ · في بيت عاصم المنقري «تَسُدّ» والرواية المشهورة «تُفْسِدُ» · «الضعيف أمير الركب» يحسُن التثبّت من درجة إسناده قبل الجزم بنسبته · ترجمة الآيات ترجمةٌ للمعاني لغرض التعليم.</div>
+  </div>
+</section>
+
+<!-- ================= TRAINING ================= -->
+<section class="sec" id="train">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">ARENA · ساحة التدريب</span>
+      <h2 class="gold-text">ساحة التدريب</h2>
+      <p>أجب عن الأسئلة كلها؛ يظهر زرّ <b class="q">«Hantar · إرسال»</b> عند السؤال الأخير فقط، ثم تظهر الدرجة، والتقدير، وتحليل الأداء حسب المباحث، ومراجعة كل سؤال (الصحيح والخطأ مع التعليل).</p>
+    </div>
+    <div class="tabs" id="tabs"></div>
+    <div id="panes"></div>
+    <div class="pane" id="pane-report"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="uni"><img src="data:image/webp;base64,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" alt="Logo UniSZA"></div>
+  <p><b>إعداد: <span class="lat">Dr. Mohd Taufiq bin Abd Talib</span></b></p>
+  <p>لطلاب الدراسات الإسلامية — كلية الدراسات الإسلامية المعاصرة (FKI)، جامعة السلطان زين العابدين (UniSZA)</p>
+  <p style="margin-top:8px;font-size:.92rem">المرجع: د. عبد الواحد صالح، «علم المعاني»، الباب الخامس: الإيجاز والمساواة والإطناب، ص ١٠٨–١١٩. الشرح مُعاد الصياغة لأغراض تعليمية.</p>
+  <p class="credit" style="margin-top:14px">✦ DR. MOHD TAUFIQ BIN ABD TALIB · FKI UNISZA · © 2026 ✦</p>
+</footer>
+
+<button class="top-btn glass edge" id="top-btn" aria-label="Ke atas">↑</button>
+<div class="toasts" id="toasts"></div>
+
+<script>
+
+/* ================= HELPERS ================= */
+const $=(s,el=document)=>el.querySelector(s),$$=(s,el=document)=>[...el.querySelectorAll(s)];
+const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+const toAr=n=>String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]);
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ================= STATE ================= */
+const KEY='ijazLab_v1';
+let S={theme:'dark',ar:30,lessons:[],best:{},student:{name:'',matric:'',group:''}};
+try{const r=localStorage.getItem(KEY);if(r)S=Object.assign(S,JSON.parse(r));}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}};
+function toast(m){const t=document.createElement('div');t.className='toast';t.textContent=m;$('#toasts').appendChild(t);setTimeout(()=>{t.style.transition='.4s';t.style.opacity='0';},2600);setTimeout(()=>t.remove(),3100);}
+
+/* theme & font */
+function applyTheme(){document.documentElement.setAttribute('data-theme',S.theme);$('#theme').textContent=S.theme==='dark'?'☀️':'🌙';}
+function applyFont(){document.documentElement.style.setProperty('--ar',S.ar+'px');}
+$('#theme').onclick=()=>{S.theme=S.theme==='dark'?'light':'dark';applyTheme();save();};
+$('#f-plus').onclick=()=>{S.ar=Math.min(42,S.ar+2);applyFont();save();};
+$('#f-minus').onclick=()=>{S.ar=Math.max(22,S.ar-2);applyFont();save();};
+$('#burger').onclick=()=>$('#links').classList.toggle('open');
+$$('#links a').forEach(a=>a.addEventListener('click',()=>$('#links').classList.remove('open')));
+
+/* ================= TWINKLING GOLD STARS ================= */
+(function(){if(reduced)return;const c=$('#stars'),x=c.getContext('2d'),dpr=Math.min(2,devicePixelRatio||1);let W,H,P=[],D=[];
+ function size(){W=c.width=innerWidth*dpr;H=c.height=innerHeight*dpr;c.style.width=innerWidth+'px';c.style.height=innerHeight+'px';
+  const n=Math.min(140,Math.floor(innerWidth*innerHeight/9000));
+  P=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,r:(Math.random()*1.4+.4)*dpr,p:Math.random()*6.3,s:Math.random()*.004+.001,big:Math.random()<.12}));
+  D=Array.from({length:Math.min(40,n/3|0)},()=>({x:Math.random()*W,y:Math.random()*H,r:(Math.random()*1.5+.5)*dpr,vy:-(Math.random()*.3+.08)*dpr,vx:(Math.random()-.5)*.15*dpr,a:Math.random()}));}
+ size();addEventListener('resize',size);
+ function star(px,py,r,a,col){x.save();x.translate(px,py);x.globalAlpha=a;x.fillStyle=col;x.beginPath();
+  for(let i=0;i<8;i++){const ang=i*Math.PI/4,rr=i%2?r*.28:r*2.6;x.lineTo(Math.cos(ang)*rr,Math.sin(ang)*rr);}x.closePath();x.fill();x.restore();}
+ (function tick(t){x.clearRect(0,0,W,H);const light=document.documentElement.dataset.theme==='light';const col=light?'#a8730f':'#ffe39a';
+  for(const p of P){const a=(Math.sin(t*p.s+p.p)+1)/2;
+   if(p.big){star(p.x,p.y,p.r*1.6,.15+.85*a*a,col);const g=x.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*9);g.addColorStop(0,`rgba(242,196,90,${.35*a})`);g.addColorStop(1,'rgba(242,196,90,0)');x.fillStyle=g;x.beginPath();x.arc(p.x,p.y,p.r*9,0,7);x.fill();}
+   else{x.globalAlpha=.15+.75*a;x.fillStyle=col;x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fill();}}
+  x.globalAlpha=1;
+  for(const d of D){d.x+=d.vx;d.y+=d.vy;if(d.y<-10){d.y=H+10;d.x=Math.random()*W;}const a=.3+.4*Math.sin(t/700+d.a*6);x.globalAlpha=a;x.fillStyle=light?'#c99a3c':'#f2c45a';x.beginPath();x.arc(d.x,d.y,d.r,0,7);x.fill();}
+  x.globalAlpha=1;requestAnimationFrame(tick);})(0);
+})();
+
+/* confetti (gold) */
+const fx=$('#fx'),fc=fx.getContext('2d');let parts=[],running=false;
+function confetti(n=140){if(reduced)return;fx.width=innerWidth;fx.height=innerHeight;const cols=['#ffe7a3','#f2c45a','#b8862b','#ff4d79','#fff6d6'];
+ for(let i=0;i<n;i++)parts.push({x:innerWidth/2+(Math.random()-.5)*260,y:innerHeight*.35,vx:(Math.random()-.5)*16,vy:-Math.random()*14-4,s:Math.random()*8+4,r:Math.random()*6,vr:(Math.random()-.5)*.3,c:cols[i%5],l:130,st:Math.random()<.4});
+ if(!running){running=true;loopFx();}}
+function loopFx(){fc.clearRect(0,0,fx.width,fx.height);parts.forEach(p=>{p.vy+=.33;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;p.l--;fc.save();fc.translate(p.x,p.y);fc.rotate(p.r);fc.globalAlpha=Math.max(0,p.l/130);fc.fillStyle=p.c;
+ if(p.st){fc.font=`${p.s*2.4}px serif`;fc.fillText('✦',0,0);}else fc.fillRect(-p.s/2,-p.s/4,p.s,p.s/2);fc.restore();});
+ parts=parts.filter(p=>p.l>0&&p.y<fx.height+40);if(parts.length)requestAnimationFrame(loopFx);else{running=false;fc.clearRect(0,0,fx.width,fx.height);}}
+
+
+/* ================= VERSE CARDS ================= */
+const NL=6;
+const fmtT=(t,rev,bad)=>esc(t).replace(/\n/g,'<br>').replace(/\{([^}]*)\}/g,(m,x)=>rev?`<span class="ins${bad?' bad':''}">${x}</span>`:'');
+const gapT=t=>esc(t).replace(/\n/g,'<br>').replace(/\{[^}]*\}/g,'<span class="gapm">◌</span>');
+function vsHTML(v,rev){
+ const shown=rev&&v.d?fmtT(v.d,true,v.bad):(v.d&&v.s===undefined?gapT(v.d):esc(v.s).replace(/\n/g,'<br>'));
+ return `<div class="src"><span class="lab">${v.lab||''}</span>${v.rf?`<span class="rf">${v.rf}</span>`:''}</div>
+  <div class="txt">${shown}</div>
+  ${v.m?`<div class="tr">${esc(v.m)}</div>`:''}
+  ${v.d?`<div class="tq">${rev?(v.bad?'⚠ المراد (المحذوف بلا قرينة): ':'✦ التقدير: ')+`<b>${esc(v.tq)}</b>`:''}</div><button class="btn btn-ghost rv-btn" data-rev>${rev?'↺ أخفِ':'👁 '+(v.bad?'أظهر المراد':'أظهر المحذوف')}</button>`:''}
+  ${v.n?`<div class="note" style="margin-bottom:0">${v.n}</div>`:''}
+  ${v.x?`<div class="anl"><h5>🔬 لماذا كان إخلالًا وحذفًا رديئًا؟</h5>${v.x.map(r=>`<div class="r"><b>${r[0]}</b><div>${r[1]}</div></div>`).join('')}</div>`:''}`;}
+function mountVS(el,v){let rev=false;el.classList.add('vs');const draw=()=>{el.innerHTML=vsHTML(v,rev);const b=$('[data-rev]',el);if(b)b.onclick=()=>{rev=!rev;draw();if(rev)markSeen(v);};};draw();}
+const SEEN=new Set();function markSeen(v){SEEN.add(v);}
+
+const VS={
+ ikh1:{x:[["ظاهر اللفظ", "أنّ «العيش» مطلقًا في ظلال الحُمق خيرٌ ممّن عاش في كدٍّ ومشقّة؛ فيُفهم منه <span class=\"x\">تفضيل الحُمق على العقل تفضيلًا مطلقًا</span>، وهذا معنى فاسد لم يُرِده الشاعر."], ["مراد الشاعر", "<span class=\"v\">العيشُ الناعمُ في ظلال الحُمق خيرٌ من العيش الشاقّ في ظلال العقل</span>؛ أي: إنّ الأحمق قد يعيش منعَّمًا لا يحمل همًّا، والعاقل قد يعيش في تعب لكثرة تفكيره."], ["المحذوف", "كلمتان في موضعين: الصفة <b>«النّاعم»</b> بعد «العيش»، والجارّ والمجرور <b>«في ظلال العقل»</b> بعد «كدًّا»."], ["وجه الإخلال", "البيت مبنيّ على <b>مقابلة</b> بين طرفين: (نعيمٌ + حُمق) في مقابل (شقاءٌ + عقل). وقد حذف الشاعر من كل طرف ركنًا، فلم يبقَ من المقابلة إلّا «النَّوك» و«الكدّ»، فانهدم أساس المعنى."], ["غياب القرينة", "لا قرينة لفظية في البيت تدلّ على «الناعم»، ولا على «العقل»، ولا تدلّ عليهما دلالة الحال؛ فلا يهتدي السامع إليهما إلّا <b>بعد تأمّل وإمعان وطول فكر</b>."], ["الحكم", "اختلّ <b>الشرطان</b> معًا: (١) الكلام محتاج إلى المحذوف ولا يستقيم دونه، (٢) ولا قرينة تدلّ عليه؛ <span class=\"x\">فهو إخلال وحذف رديء لا إيجاز بليغ</span>."]],lab:'الشاهد الأول: الحارث بن حِلِّزة اليشكري',bad:1,s:'وَالعَيْشُ خَيْرٌ فِي ظِلَا ✦ لِ النَّوْكِ مِمَّنْ عَاشَ كَدًّا',d:'وَالعَيْشُ {النَّاعِمُ} خَيْرٌ فِي ظِلَا ✦ لِ النَّوْكِ مِمَّنْ عَاشَ كَدًّا {فِي ظِلَالِ العَقْلِ}',tq:'النَّاعِمُ … فِي ظِلَالِ العَقْلِ',m:'“Kehidupan dalam naungan kebodohan lebih baik daripada orang yang hidup bersusah payah.”',n:'المفردات: النَّوْك: الحُمق · كَدًّا: بمشقّة وتعب. المراد: العيش الناعم في ظلال الحمق خير من العيش الشاقّ في ظلال العقل.'},
+ ikh2:{x:[["ظاهر اللفظ", "يتعجّب الشاعر من قومٍ «يقتلون نفوسهم»، ثم يقول: إنّ قتلهم في الحرب كان أعذر؛ ولكنّه <span class=\"x\">لم يبيّن متى يقتلون نفوسهم ولا في أيّ حال</span>، فيتحيّر السامع: أهو انتحار حقيقي؟ أم هلاك في الحرب نفسها؟"], ["مراد الشاعر", "<span class=\"v\">يُهلكون أنفسهم في وقت السِّلم</span>، وموتُهم في ساحة الحرب كان أعذرَ لهم وأشرف."], ["المحذوف", "الظرف <b>«في السِّلم»</b>، وهو الطرف الذي يقابل «عند الوغى»."], ["وجه الإخلال", "ذكر الشاعر أحد طرفي المقابلة (<b>عند الوغى</b>) وحذف الطرف المقابل له (<b>في السِّلم</b>)، والمقابلة لا يتمّ معناها إلّا بذكر الطرفين أو بوجود ما يدلّ على المحذوف منهما."], ["غياب القرينة", "ليس في البيت لفظٌ يدلّ على السِّلم، ولا حالٌ تُرشد إليه؛ فالمعنى <b>غامض</b> لا يُدرَك إلّا بالتخمين."], ["الحكم", "الكلام محتاج إلى المحذوف، ولا دليل عليه؛ <span class=\"x\">فهو إخلال وحذف رديء</span>."]],lab:'الشاهد الثاني: عروة بن الورد',bad:1,s:'عَجِبْتُ لَهُمْ إِذْ يَقْتُلُوْنَ نُفُوْسَهُمْ ✦ وَمَقْتَلُهُمْ عِنْدَ الوَغَى كَانَ أَعْذَرَا',d:'عَجِبْتُ لَهُمْ إِذْ يَقْتُلُوْنَ نُفُوْسَهُمْ {فِي السِّلْمِ} ✦ وَمَقْتَلُهُمْ عِنْدَ الوَغَى كَانَ أَعْذَرَا',tq:'فِي السِّلْمِ',m:'“Aku hairan terhadap mereka ketika mereka membunuh diri mereka sendiri, sedangkan terbunuhnya mereka di medan perang lebih dapat dimaafkan.”',n:'المفردات: الوَغَى: الحرب · أَعْذَر: أدعى إلى قبول العذر.'},
+ ikh3:{x:[["ظاهر اللفظ", "المعروف «إذا زجا» (تيسّر وأسرع) أفضل منه «إذا توفّر وأبطأ»؛ فيُوهم الكلام أنّ <span class=\"x\">الكثرة عيبٌ في المعروف</span>، وأنّ المعروف السريع أفضل ولو كان كثيرًا!"], ["مراد القائل", "<span class=\"v\">المعروف إذا قلَّ وأسرع كان أفضل منه إذا كثُر وأبطأ</span>؛ أي: القليل العاجل خيرٌ من الكثير الآجل."], ["المحذوف", "الفعل <b>«قلَّ»</b> قبل «زجا»."], ["وجه الإخلال", "الكلام قائم على <b>مقابلتين</b>: (قلَّ × توفَّر) و(زجا × أبطأ). فذكر القائل «زجا» ومقابلها «أبطأ»، وذكر «توفّر» وحذف مقابلها «قلّ»؛ <b>فاختلّ توازن المقابلة</b> وبقيت «توفّر» بلا مقابل."], ["غياب القرينة", "لا يدلّ على «قلّ» شيء في الكلام، بل ظاهره يدلّ على عكس المراد."], ["الحكم", "حذفٌ أفسد المعنى وأوهم خلاف المقصود؛ <span class=\"x\">فهو إخلال وحذف رديء</span>."]],lab:'الشاهد الثالث: من النثر',bad:1,s:'فَإِنَّ المَعْرُوْفَ إِذَا زَجَا كَانَ أَفْضَلَ مِنْهُ إِذَا تَوَفَّرَ وَأَبْطَا',d:'فَإِنَّ المَعْرُوْفَ إِذَا {قَلَّ وَ}زَجَا كَانَ أَفْضَلَ مِنْهُ إِذَا تَوَفَّرَ وَأَبْطَا',tq:'قَلَّ (مقابل: تَوَفَّرَ)',m:'“Sesungguhnya kebaikan, apabila ia mudah (segera), lebih utama daripada apabila ia banyak tetapi lambat.”',n:'المفردات: زَجَا: تيسّر وسهُل · أَبْطَا: أبطأ.'},
+ q1:{lab:'الشاهد الأول',rf:'الأعراف: ٥٤',s:'﴿أَلَا لَهُ الْخَلْقُ وَالْأَمْرُ﴾',m:'“Ingatlah, kepunyaan Allah jualah urusan penciptaan dan urusan pemerintahan.”',n:'كلمتان فقط (الخلق والأمر) استوعبتا جميع الأشياء والشؤون على وجه الاستقصاء.'},
+ q1b:{lab:'قول ابن عمر رضي الله عنهما بعد قراءتها',s:'مَنْ بَقِيَ لَهُ شَيْءٌ فَلْيَطْلُبْهُ',m:'“Sesiapa yang masih ada sesuatu (yang tidak termasuk dalam ayat ini), maka carilah ia.”'},
+ q2:{lab:'الشاهد الثاني',rf:'الأعراف: ١٩٩',s:'﴿خُذِ الْعَفْوَ وَأْمُرْ بِالْعُرْفِ وَأَعْرِضْ عَنِ الْجَاهِلِينَ﴾',m:'“Terimalah apa yang mudah engkau lakukan dan maafkanlah, suruhlah dengan perkara yang baik, dan berpalinglah daripada orang-orang yang jahil.”',n:'جمعت الآية مكارم الأخلاق كلّها، دقيقها وجليلها.'},
+ q3:{lab:'الشاهد الثالث',rf:'البقرة: ١٧٩',s:'﴿وَلَكُمْ فِي الْقِصَاصِ حَيَاةٌ﴾',m:'“Dan bagi kamu dalam (hukuman) qisas itu ada (jaminan) kehidupan.”'},
+ q4:{lab:'الشاهد الرابع: قوله ﷺ (كما في الكتاب)',s:'«الضَّعِيْفُ أَمِيْرُ الرَّكْبِ»',m:'“Orang yang paling lemah ialah ketua bagi rombongan musafir.”',n:'جمعت آداب السفر والرفق بالضعيف: يسير الركب بسير أضعفهم كأنه أميرهم. (يحسُن التثبّت من درجة إسناده قبل الجزم بنسبته.)'}
+};
+
+/* ================= HAZF AL-MUFRAD (15) ================= */
+const HZ=[
+ {n:'حذف المبتدأ',k:'هي · هذا · هم',x:[
+  {rf:'القارعة: ١٠–١١',d:'﴿وَمَا أَدْرَاكَ مَا هِيَهْ ۝ {هِيَ} نَارٌ حَامِيَةٌ﴾',tq:'هِيَ نَارٌ حَامِيَةٌ',m:'“Dan apakah yang memberitahu kamu apakah (Hawiyah) itu? (Ia ialah) api yang sangat panas.”'},
+  {rf:'غافر: ٢٤',d:'﴿فَقَالُوا {هَذَا} سَاحِرٌ كَذَّابٌ﴾',tq:'هَذَا سَاحِرٌ',m:'“Lalu mereka berkata: (Dia ialah) seorang ahli sihir lagi pendusta.”'},
+  {rf:'الأنبياء: ٢٦',d:'﴿بَلْ {هُمْ} عِبَادٌ مُكْرَمُونَ﴾',tq:'هُمْ عِبَادٌ',m:'“Bahkan (mereka itu) hamba-hamba yang dimuliakan.”'}]},
+ {n:'حذف الخبر',k:'دائم · حاضرون',x:[
+  {rf:'الرعد: ٣٥',d:'﴿أُكُلُهَا دَائِمٌ وَظِلُّهَا {دَائِمٌ}﴾',tq:'وَظِلُّهَا دَائِمٌ — لدلالة الجملة السابقة عليه',m:'“Buahnya kekal (tidak putus), dan naungannya (juga kekal).”'},
+  {rf:'سبأ: ٣١',d:'﴿لَوْلَا أَنْتُمْ {حَاضِرُونَ} لَكُنَّا مُؤْمِنِينَ﴾',tq:'لَوْلَا أَنْتُمْ حَاضِرُونَ — والخبر بعد «لولا» يُحذف غالبًا',m:'“Kalaulah tidak kerana kamu, tentulah kami menjadi orang-orang yang beriman.”'},
+  {rf:'التوبة: ٣',d:'﴿وَأَذَانٌ مِنَ اللَّهِ وَرَسُولِهِ إِلَى النَّاسِ يَوْمَ الْحَجِّ الْأَكْبَرِ أَنَّ اللَّهَ بَرِيءٌ مِنَ الْمُشْرِكِينَ وَرَسُولُهُ {بَرِيءٌ مِنْهُمْ أَيْضًا}﴾',tq:'وَرَسُولُهُ بَرِيءٌ مِنْهُمْ أَيْضًا',m:'“Dan inilah perisytiharan daripada Allah dan Rasul-Nya kepada umat manusia pada hari Haji Akbar, bahawa Allah berlepas diri daripada orang-orang musyrik, dan (demikian juga) Rasul-Nya.”'}]},
+ {n:'حذف الفاعل',k:'فاعل المصدر',x:[
+  {rf:'فصّلت: ٤٩',s:'﴿لَا يَسْأَمُ الْإِنْسَانُ مِنْ دُعَاءِ الْخَيْرِ﴾',d:'﴿لَا يَسْأَمُ الْإِنْسَانُ مِنْ دُعَائِ{هِ} الْخَيْرَ﴾',tq:'مِنْ دُعَائِهِ الْخَيْرَ — حُذف فاعل المصدر «دعاء»',m:'“Manusia tidak jemu-jemu memohon kebaikan.”'}]},
+ {n:'حذف المفعول',k:'إلهًا · العذاب',x:[
+  {rf:'الأعراف: ١٥٢',d:'﴿إِنَّ الَّذِينَ اتَّخَذُوا الْعِجْلَ {إِلَهًا}﴾',tq:'اتَّخَذُوا الْعِجْلَ إِلَهًا — حُذف المفعول الثاني',m:'“Sesungguhnya orang-orang yang menjadikan (patung) anak lembu (sebagai sembahan)…”'},
+  {rf:'السجدة: ١٤',d:'﴿فَذُوقُوا {الْعَذَابَ} بِمَا نَسِيتُمْ لِقَاءَ يَوْمِكُمْ هَٰذَا﴾',tq:'فَذُوقُوا الْعَذَابَ',m:'“Maka rasalah (azab) disebabkan kamu melupakan pertemuan hari kamu ini.”'},
+  {rf:'النحل: ٩',d:'﴿وَعَلَى اللَّهِ قَصْدُ السَّبِيلِ وَمِنْهَا جَائِرٌ ۚ وَلَوْ شَاءَ {هِدَايَتَكُمْ} لَهَدَاكُمْ أَجْمَعِينَ﴾',tq:'وَلَوْ شَاءَ هِدَايَتَكُمْ — لدلالة الجواب عليه',m:'“Dan Allah jualah yang menerangkan jalan yang lurus, dan di antaranya ada jalan yang menyimpang. Dan sekiranya Dia menghendaki, nescaya Dia memberi petunjuk kepada kamu semuanya.”'}]},
+ {n:'حذف حروف المعاني',k:'لا النافية',x:[
+  {rf:'يوسف: ٨٥',d:'﴿قَالُوا تَاللَّهِ {لَا} تَفْتَأُ تَذْكُرُ يُوسُفَ﴾',tq:'لَا تَفْتَأُ — حُذفت «لا» في جواب القسم',m:'“Mereka berkata: Demi Allah, ayah tidak henti-henti mengingati Yusuf.”'},
+  {rf:'امرؤ القيس',d:'فَقُلْتُ يَمِيْنُ اللهِ {لَا} أَبْرَحُ قَاعِدًا ✦ وَلَوْ قَطَعُوْا رَأْسِيْ لَدَيْكِ وَأَوْصَالِيْ',tq:'لَا أَبْرَحُ قَاعِدًا',m:'“Lalu aku berkata: Demi Allah, aku tidak akan berganjak dari dudukku, walaupun mereka memotong kepalaku dan sendi-sendi anggotaku di sisimu.”'},
+  {rf:'عاصم المِنْقَري',d:'رَأَيْتُ الخَمْرَ جَامِدَةً وَفِيْهَا ✦ خِصَالٌ تُفْسِدُ الرَّجُلَ الحَلِيْمَا\nفَلَا وَاللهِ {لَا} أَشْرَبُهَا حَيَاتِيْ ✦ وَلَا أَسْقِيْ بِهَا أَبَدًا نَدِيْمَا',tq:'لَا أَشْرَبُهَا',m:'“Aku melihat arak itu, dan padanya ada perangai-perangai yang merosakkan lelaki yang berakal. Maka demi Allah, aku tidak akan meminumnya sepanjang hayatku, dan aku tidak akan menghidangkannya kepada teman minum selama-lamanya.”',n:'في الكتاب «تَسُدّ»، والرواية المشهورة «تُفْسِدُ».'}]},
+ {n:'حذف المضاف',k:'أهل · سدّ · رحمة',x:[
+  {rf:'يوسف: ٨٢',s:'﴿وَاسْأَلِ الْقَرْيَةَ الَّتِي كُنَّا فِيهَا﴾',d:'﴿وَاسْأَلْ {أَهْلَ} الْقَرْيَةِ الَّتِي كُنَّا فِيهَا﴾',tq:'أَهْلَ الْقَرْيَةِ',m:'“Dan tanyalah (penduduk) negeri yang kami berada di sana.”'},
+  {rf:'الأنبياء: ٩٦',s:'﴿حَتَّىٰ إِذَا فُتِحَتْ يَأْجُوجُ وَمَأْجُوجُ﴾',d:'﴿حَتَّىٰ إِذَا فُتِحَ {سَدُّ} يَأْجُوجَ وَمَأْجُوجَ﴾',tq:'سَدُّ يَأْجُوجَ وَمَأْجُوجَ',m:'“Sehingga apabila (tembok) Ya’juj dan Ma’juj dibuka.”'},
+  {rf:'الأحزاب: ٢١',s:'﴿لَقَدْ كَانَ لَكُمْ فِي رَسُولِ اللَّهِ أُسْوَةٌ حَسَنَةٌ لِمَنْ كَانَ يَرْجُو اللَّهَ وَالْيَوْمَ الْآخِرَ وَذَكَرَ اللَّهَ كَثِيرًا﴾',d:'﴿لَقَدْ كَانَ لَكُمْ فِي رَسُولِ اللَّهِ أُسْوَةٌ حَسَنَةٌ لِمَنْ كَانَ يَرْجُو {رَحْمَةَ} اللَّهِ وَالْيَوْمَ الْآخِرَ وَذَكَرَ اللَّهَ كَثِيرًا﴾',tq:'يَرْجُو رَحْمَةَ اللَّهِ',m:'“Sesungguhnya pada diri Rasulullah itu ada contoh ikutan yang baik bagi kamu, iaitu bagi orang yang mengharapkan (rahmat) Allah dan (balasan baik) hari akhirat, serta banyak mengingati Allah.”'}]},
+ {n:'حذف المضاف إليه',k:'ذلك · ليالٍ',x:[
+  {rf:'الروم: ٤',s:'﴿لِلَّهِ الْأَمْرُ مِنْ قَبْلُ وَمِنْ بَعْدُ﴾',d:'﴿لِلَّهِ الْأَمْرُ مِنْ قَبْلِ {ذَلِكَ} وَمِنْ بَعْدِ{هِ}﴾',tq:'مِنْ قَبْلِ ذَلِكَ وَمِنْ بَعْدِهِ',m:'“Bagi Allah jualah urusan sebelum dan sesudahnya.”'},
+  {rf:'الأعراف: ١٤٢',d:'﴿وَوَاعَدْنَا مُوسَىٰ ثَلَاثِينَ لَيْلَةً وَأَتْمَمْنَاهَا بِعَشْرٍ {لَيَالٍ}﴾',tq:'بِعَشْرِ لَيَالٍ',m:'“Dan Kami telah menjanjikan kepada Musa (pertemuan) selama tiga puluh malam, dan Kami sempurnakannya dengan sepuluh (malam lagi).”'}]},
+ {n:'حذف الجار والمجرور',k:'من كل شيء',x:[
+  {rf:'التوبة: ١٠٢',d:'﴿خَلَطُوا عَمَلًا صَالِحًا {بِسَيِّئٍ} وَآخَرَ سَيِّئًا {بِصَالِحٍ}﴾',tq:'عَمَلًا صَالِحًا بِسَيِّئٍ وَآخَرَ سَيِّئًا بِصَالِحٍ',m:'“Mereka mencampuradukkan amal yang baik dengan amal lain yang buruk.”'},
+  {rf:'العنكبوت: ٤٥',d:'﴿وَلَذِكْرُ اللَّهِ أَكْبَرُ {مِنْ كُلِّ شَيْءٍ}﴾',tq:'أَكْبَرُ مِنْ كُلِّ شَيْءٍ',m:'“Dan sesungguhnya mengingati Allah itu lebih besar (keutamaannya).”'},
+  {rf:'البحتري',d:'اللهُ أَعْطَاكَ المَحَبَّةَ فِي الوَرَى ✦ وَحَبَاكَ بِالفَضْلِ الَّذِيْ لَا يُنْكَرُ\nوَلَأَنْتَ أَمْلَأُ فِي العُيُوْنِ {مِنْ غَيْرِكَ} لَدَيْهِمْ ✦ وَأَجَلُّ قَدْرًا فِي الصُّدُوْرِ وَأَكْبَرُ',tq:'أَمْلَأُ فِي العُيُوْنِ مِنْ غَيْرِكَ',m:'“Allah telah mengurniakan kepadamu kecintaan dalam kalangan makhluk, dan menganugerahkanmu kelebihan yang tidak dapat dinafikan. Sungguh engkau lebih memenuhi pandangan mata mereka, lebih mulia kedudukanmu dalam hati mereka, dan lebih agung.”'}]},
+ {n:'حذف الموصوف',k:'حور · عملًا · القوم',x:[
+  {rf:'الصافات: ٤٨',d:'﴿وَعِنْدَهُمْ {حُورٌ} قَاصِرَاتُ الطَّرْفِ عِينٌ﴾',tq:'حُورٌ قَاصِرَاتُ الطَّرْفِ',m:'“Dan di sisi mereka ada (bidadari-bidadari) yang membatasi pandangannya (hanya kepada pasangan masing-masing), lagi cantik matanya.”'},
+  {rf:'الفرقان: ٧١ (باب المصدر)',d:'﴿وَمَنْ تَابَ وَعَمِلَ {عَمَلًا} صَالِحًا﴾',tq:'وَعَمِلَ عَمَلًا صَالِحًا',m:'“Dan sesiapa yang bertaubat serta beramal soleh.”'},
+  {rf:'باب النداء',d:'يَا أَيُّهَا {الْقَوْمُ} الْمُؤْمِنُونَ',tq:'يَا أَيُّهَا الْقَوْمُ الْمُؤْمِنُونَ',m:'“Wahai orang-orang yang beriman.”',n:'وأكثر ما يكون حذف الموصوف في باب النداء.'},
+  {rf:'باب النداء',d:'يَا أَيُّهَا {الرَّجُلُ} الظَّرِيْفُ',tq:'يَا أَيُّهَا الرَّجُلُ الظَّرِيْفُ',m:'“Wahai orang yang bijak budi.”'}]},
+ {n:'حذف الصفة',k:'شديد · سليمة · متزوّج',x:[
+  {rf:'قريش: ٤',d:'﴿الَّذِي أَطْعَمَهُمْ مِنْ جُوعٍ {شَدِيدٍ} وَآمَنَهُمْ مِنْ خَوْفٍ {عَظِيمٍ}﴾',tq:'مِنْ جُوعٍ شَدِيدٍ … مِنْ خَوْفٍ عَظِيمٍ',m:'“Tuhan yang memberi mereka makan untuk menghilangkan kelaparan, dan mengamankan mereka daripada ketakutan.”'},
+  {rf:'الكهف: ٧٩',d:'﴿أَمَّا السَّفِينَةُ فَكَانَتْ لِمَسَاكِينَ يَعْمَلُونَ فِي الْبَحْرِ فَأَرَدْتُ أَنْ أَعِيبَهَا وَكَانَ وَرَاءَهُمْ مَلِكٌ يَأْخُذُ كُلَّ سَفِينَةٍ {سَلِيمَةٍ} غَصْبًا﴾',tq:'كُلَّ سَفِينَةٍ سَلِيمَةٍ — ولذلك عابها الخضر',m:'“Adapun perahu itu, ia dimiliki oleh orang-orang miskin yang bekerja di laut, lalu aku ingin mencacatkannya, kerana di hadapan mereka ada seorang raja yang merampas setiap perahu (yang elok).”'},
+  {rf:'الحماسي',d:'كُلُّ امْرِئٍ {مُتَزَوِّجٍ} سَتَئِيْمُ مِنْـ ✦ ـهُ العِرْسُ أَوْ مِنْهَا يَئِيْمُ',tq:'كُلُّ امْرِئٍ مُتَزَوِّجٍ',m:'“Setiap lelaki (yang berkahwin), isterinya akan menjadi balu kerana kematiannya, atau dia pula akan menjadi duda kerana kematian isterinya.”',n:'المفردات: العِرْس: الزوجة · آمَ يَئِيمُ: صار أيِّمًا بلا زوج.'}]},
+ {n:'حذف الشرط',k:'فإن تتّبعوني',x:[
+  {rf:'العنكبوت: ٥٦',d:'﴿يَا عِبَادِيَ الَّذِينَ آمَنُوا إِنَّ أَرْضِي وَاسِعَةٌ {فَإِنْ لَمْ يَتَسَنَّ لَكُمْ إِخْلَاصُ الْعِبَادَةِ فِي أَرْضٍ فَأَخْلِصُوهَا فِي غَيْرِهَا} فَإِيَّايَ فَاعْبُدُونِ﴾',tq:'إِنْ لَمْ يَتَسَنَّ لَكُمْ إِخْلَاصُ الْعِبَادَةِ فِي أَرْضٍ فَأَخْلِصُوهَا فِي غَيْرِهَا',m:'“Wahai hamba-hamba-Ku yang beriman, sesungguhnya bumi-Ku luas, maka kepada-Ku sahajalah hendaklah kamu beribadat.”'},
+  {rf:'إبراهيم: ٣١',d:'﴿قُلْ لِعِبَادِيَ الَّذِينَ آمَنُوا {إِنْ قُلْتَ لَهُمْ أَقِيمُوا} يُقِيمُوا الصَّلَاةَ﴾',tq:'إِنْ قُلْتَ لَهُمْ أَقِيمُوا يُقِيمُوا — ولذا جُزم «يقيموا»',m:'“Katakanlah kepada hamba-hamba-Ku yang beriman, (jika engkau menyuruh mereka) nescaya mereka mendirikan solat.”'},
+  {rf:'آل عمران: ٣١',d:'﴿فَاتَّبِعُونِي {فَإِنْ تَتَّبِعُونِي} يُحْبِبْكُمُ اللَّهُ﴾',tq:'فَإِنْ تَتَّبِعُونِي يُحْبِبْكُمُ اللَّهُ',m:'“Maka ikutilah aku, nescaya Allah mengasihi kamu.”'}]},
+ {n:'حذف جواب الشرط',k:'لرأيتَ أمرًا فظيعًا',x:[
+  {rf:'الأحقاف: ١٠',d:'﴿قُلْ أَرَأَيْتُمْ إِنْ كَانَ مِنْ عِنْدِ اللَّهِ وَكَفَرْتُمْ بِهِ {أَلَسْتُمْ ظَالِمِينَ؟}﴾',tq:'أَلَسْتُمْ ظَالِمِينَ؟',m:'“Katakanlah: Bagaimana fikiran kamu, jika (al-Quran) itu datang dari sisi Allah, sedangkan kamu mengingkarinya?”',n:'الدليل في الكتاب: ﴿إِنَّ اللَّهَ لَا يَهْدِي الْقَوْمَ الظَّالِمِينَ﴾ [المائدة: ٥١] — “Sesungguhnya Allah tidak memberi petunjuk kepada kaum yang zalim.” وهي العبارة نفسها التي خُتمت بها آية الأحقاف.'},
+  {rf:'الأنعام: ٢٧',d:'﴿وَلَوْ تَرَىٰ إِذْ وُقِفُوا عَلَى النَّارِ {لَرَأَيْتَ أَمْرًا فَظِيعًا}﴾',tq:'لَرَأَيْتَ أَمْرًا فَظِيعًا',m:'“Dan sekiranya engkau melihat ketika mereka dihadapkan ke neraka…”'},
+  {rf:'الأنعام: ٩٣',d:'﴿وَلَوْ تَرَىٰ إِذِ الظَّالِمُونَ فِي غَمَرَاتِ الْمَوْتِ {لَرَأَيْتَ سُوءَ حَالِهِمْ}﴾',tq:'لَرَأَيْتَ سُوءَ حَالِهِمْ',m:'“Dan sekiranya engkau melihat ketika orang-orang zalim berada dalam penderitaan sakaratul maut…”',n:'القيمة البلاغية: يُحذف جواب «لو» ليذهب ذهن السامع كلّ مذهب في تصوّر الهول الذي تضيق عنه العبارة.'}]},
+ {n:'حذف القسم',k:'والله',x:[
+  {rf:'مثال',d:'{وَاللهِ} لَأَفْعَلَنَّ',tq:'وَاللهِ لَأَفْعَلَنَّ',m:'“Sungguh, aku pasti akan melakukannya.”'},
+  {rf:'مثال',d:'{وَاللهِ} لَأَضْرِبَنَّ رِقَابَ الأَعْدَاءِ',tq:'وَاللهِ لَأَضْرِبَنَّ',m:'“Sungguh, aku pasti akan memenggal leher musuh-musuh.”',n:'القرينة: لام جواب القسم ونون التوكيد في الفعل.'}]},
+ {n:'حذف جواب القسم',k:'لتُعذَّبُنّ · لتُبعَثُنّ',x:[
+  {rf:'الفجر: ١–٥',d:'﴿وَالْفَجْرِ ۝ وَلَيَالٍ عَشْرٍ ۝ وَالشَّفْعِ وَالْوَتْرِ ۝ وَاللَّيْلِ إِذَا يَسْرِ {لَتُعَذَّبُنَّ} ۝ هَلْ فِي ذَٰلِكَ قَسَمٌ لِذِي حِجْرٍ﴾',tq:'لَتُعَذَّبُنَّ (كما في الكتاب)',m:'“Demi waktu fajar; dan malam yang sepuluh; dan yang genap serta yang ganjil; dan malam apabila ia berlalu. Adakah pada yang demikian itu terdapat sumpah (yang diterima) bagi orang yang berakal?”'},
+  {rf:'النازعات: ١–٦',d:'﴿وَالنَّازِعَاتِ غَرْقًا ۝ وَالنَّاشِطَاتِ نَشْطًا ۝ وَالسَّابِحَاتِ سَبْحًا ۝ فَالسَّابِقَاتِ سَبْقًا ۝ فَالْمُدَبِّرَاتِ أَمْرًا {لَتُبْعَثُنَّ وَلَتُحَاسَبُنَّ} ۝ يَوْمَ تَرْجُفُ الرَّاجِفَةُ﴾',tq:'لَتُبْعَثُنَّ وَلَتُحَاسَبُنَّ',m:'“Demi (malaikat) yang mencabut (nyawa) dengan keras; dan yang mencabut dengan lemah lembut; dan yang turun dengan pantas; lalu yang mendahului dengan kencang; serta yang mengatur urusan. (Kamu pasti dibangkitkan) pada hari bumi bergoncang.”',n:'الدليل: إنكارهم للبعث في الآية ١٠: ﴿يَقُولُونَ أَإِنَّا لَمَرْدُودُونَ فِي الْحَافِرَةِ﴾ — “Mereka berkata: Adakah kita benar-benar akan dikembalikan kepada keadaan semula (hidup kembali)?”'}]},
+ {n:'حذف الحال',k:'قائلين',x:[
+  {rf:'الرعد: ٢٣–٢٤',d:'﴿وَالْمَلَائِكَةُ يَدْخُلُونَ عَلَيْهِمْ مِنْ كُلِّ بَابٍ ۝ {قَائِلِينَ:} سَلَامٌ عَلَيْكُمْ بِمَا صَبَرْتُمْ ۚ فَنِعْمَ عُقْبَى الدَّارِ﴾',tq:'قَائِلِينَ: سَلَامٌ عَلَيْكُمْ',m:'“Dan para malaikat masuk menemui mereka dari setiap pintu, (sambil berkata): Selamat sejahtera ke atas kamu disebabkan kesabaran kamu. Maka sebaik-baik tempat kesudahan ialah syurga.”'}]}
+];
+/* original text = taqdir with {…} removed, unless given */
+HZ.forEach(h=>h.x.forEach(v=>{if(v.s===undefined)v.s=v.d.replace(/\s?\{[^}]*\}/g,'').trim();}));
+
+/* ================= STORIES (jumlah / jumal) ================= */
+const STR=[
+ {k:'جملة',t:'البقرة ١٢٧',rf:'البقرة: ١٢٧',sc:['وَإِذْ يَرْفَعُ إِبْرَاهِيمُ الْقَوَاعِدَ مِنَ الْبَيْتِ وَإِسْمَاعِيلُ',['وَهُمَا يَقُولَانِ'],'رَبَّنَا تَقَبَّلْ مِنَّا ۖ إِنَّكَ أَنْتَ السَّمِيعُ الْعَلِيمُ'],m:'“Dan (ingatlah) ketika Nabi Ibrahim bersama Nabi Ismail meninggikan binaan asas-asas Baitullah, (sambil keduanya berdoa): Wahai Tuhan kami, terimalah daripada kami (amalan kami). Sesungguhnya Engkaulah Yang Maha Mendengar lagi Maha Mengetahui.”'},
+ {k:'جملة',t:'البقرة ٢١٣',rf:'البقرة: ٢١٣',sc:['كَانَ النَّاسُ أُمَّةً وَاحِدَةً',['فَاخْتَلَفُوا'],'فَبَعَثَ اللَّهُ النَّبِيِّينَ'],m:'“Manusia dahulunya ialah umat yang satu, (lalu mereka berselisih), maka Allah mengutus para nabi.”',n:'بُعث النبيّون بسبب هذا الاختلاف.'},
+ {k:'جملة',t:'البقرة ٦٠',rf:'البقرة: ٦٠',sc:['وَإِذِ اسْتَسْقَىٰ مُوسَىٰ لِقَوْمِهِ فَقُلْنَا اضْرِبْ بِعَصَاكَ الْحَجَرَ',['فَضَرَبَ مُوسَى الْحَجَرَ'],'فَانْفَجَرَتْ مِنْهُ اثْنَتَا عَشْرَةَ عَيْنًا'],m:'“Dan (ingatlah) ketika Nabi Musa memohon air untuk kaumnya, lalu Kami berfirman: Pukullah batu itu dengan tongkatmu. (Setelah dipukul,) maka terpancarlah daripadanya dua belas mata air.”'},
+ {k:'جملة',t:'الشعراء ٦٣',rf:'الشعراء: ٦٣',sc:['فَأَوْحَيْنَا إِلَىٰ مُوسَىٰ أَنِ اضْرِبْ بِعَصَاكَ الْبَحْرَ',['فَضَرَبَ مُوسَى الْبَحْرَ'],'فَانْفَلَقَ فَكَانَ كُلُّ فِرْقٍ كَالطَّوْدِ الْعَظِيمِ'],m:'“Lalu Kami wahyukan kepada Musa: Pukullah laut itu dengan tongkatmu. (Setelah dipukul,) maka terbelahlah laut itu, lalu setiap belahan menjadi seperti gunung yang besar.”'},
+ {k:'جُمَل',t:'موسى وابنتا شعيب',rf:'القصص: ٢٤–٢٥',sc:['فَسَقَىٰ لَهُمَا ثُمَّ تَوَلَّىٰ إِلَى الظِّلِّ فَقَالَ رَبِّ إِنِّي لِمَا أَنْزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ',['فَذَهَبَتَا إِلَى أَبِيهِمَا'],['وَقَصَّتَا عَلَيْهِ مَا كَانَ مِنْ أَمْرِ مُوسَى'],['فَأَرْسَلَ إِلَيْهِ'],'فَجَاءَتْهُ إِحْدَاهُمَا تَمْشِي عَلَى اسْتِحْيَاءٍ قَالَتْ إِنَّ أَبِي يَدْعُوكَ لِيَجْزِيَكَ أَجْرَ مَا سَقَيْتَ لَنَا ۚ فَلَمَّا جَاءَهُ وَقَصَّ عَلَيْهِ الْقَصَصَ قَالَ لَا تَخَفْ ۖ نَجَوْتَ مِنَ الْقَوْمِ الظَّالِمِينَ'],m:'“Maka Musa memberi minum (ternakan) mereka berdua, kemudian dia beredar ke tempat teduh lalu berdoa: Wahai Tuhanku, sesungguhnya aku amat memerlukan apa jua kebaikan yang Engkau turunkan kepadaku. Kemudian salah seorang daripada keduanya datang kepadanya dengan berjalan dalam keadaan malu, lalu berkata: Sesungguhnya bapaku menjemputmu untuk membalas upahmu kerana memberi minum (ternakan) kami. Maka apabila Musa datang kepadanya dan menceritakan kisah (yang dialaminya), dia berkata: Janganlah engkau takut, engkau telah terselamat daripada kaum yang zalim itu.”',n:'المرجع في الكتاب: الجارم، البلاغة الواضحة، ص ٢٤١.'},
+ {k:'جُمَل',t:'الهدهد وملكة سبأ',rf:'النمل: ٢٨–٣١',sc:['اذْهَبْ بِكِتَابِي هَٰذَا فَأَلْقِهْ إِلَيْهِمْ ثُمَّ تَوَلَّ عَنْهُمْ فَانْظُرْ مَاذَا يَرْجِعُونَ',['فَذَهَبَ الْهُدْهُدُ وَحَمَلَ الْكِتَابَ'],['فَأَلْقَاهُ'],['فَأَخَذَتْهُ وَقَرَأَتْهُ'],['وَجَمَعَتْ قَوْمَهَا'],'قَالَتْ يَا أَيُّهَا الْمَلَأُ إِنِّي أُلْقِيَ إِلَيَّ كِتَابٌ كَرِيمٌ ۝ إِنَّهُ مِنْ سُلَيْمَانَ وَإِنَّهُ بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ۝ أَلَّا تَعْلُوا عَلَيَّ وَأْتُونِي مُسْلِمِينَ'],m:'“(Sulaiman berkata:) Pergilah dengan suratku ini, lalu jatuhkanlah ia kepada mereka, kemudian berundurlah daripada mereka dan perhatikanlah apa jawapan mereka. (Ratu Saba’) berkata: Wahai para pembesar, sesungguhnya telah dijatuhkan kepadaku sepucuk surat yang mulia. Sesungguhnya ia daripada Sulaiman, dan sesungguhnya isinya: Dengan nama Allah Yang Maha Pemurah lagi Maha Penyayang. Janganlah kamu meninggi diri terhadapku, dan datanglah kepadaku dalam keadaan berserah diri.”'},
+ {k:'جُمَل',t:'تأويل رؤيا الملك',rf:'يوسف: ٤٥–٤٦',sc:['وَقَالَ الَّذِي نَجَا مِنْهُمَا وَادَّكَرَ بَعْدَ أُمَّةٍ أَنَا أُنَبِّئُكُمْ بِتَأْوِيلِهِ فَأَرْسِلُونِ',['إِلَى يُوسُفَ لِأَسْتَعْبِرَهُ الرُّؤْيَا'],['فَأَرْسَلُوهُ إِلَيْهِ'],['فَأَتَاهُ وَقَالَ لَهُ'],'يُوسُفُ أَيُّهَا الصِّدِّيقُ أَفْتِنَا فِي سَبْعِ بَقَرَاتٍ سِمَانٍ يَأْكُلُهُنَّ سَبْعٌ عِجَافٌ وَسَبْعِ سُنْبُلَاتٍ خُضْرٍ وَأُخَرَ يَابِسَاتٍ'],m:'“Dan berkatalah orang yang terselamat antara dua (banduan) itu, yang teringat (akan Yusuf) setelah berlalu sekian lama: Aku akan memberitahu kamu takwilnya, maka utuslah aku (kepadanya). (Setibanya di penjara dia berkata:) Wahai Yusuf, wahai orang yang sangat benar, terangkanlah kepada kami (takwil mimpi) tujuh ekor lembu gemuk yang dimakan oleh tujuh ekor lembu kurus, dan tujuh tangkai (gandum) yang hijau dan (tujuh) lagi yang kering.”'}
+];
+
+/* ================= HERO DEMO ================= */
+const DEMO=[[5,0],[1,0],[7,1],[9,0],[11,2]].map(([h,i])=>({v:HZ[h].x[i],c:HZ[h].n}));
+let di=0;function demo(){const d=DEMO[di],el=$('#demo');el.style.opacity=0;
+ setTimeout(()=>{el.innerHTML=esc(d.v.s).replace(/\n/g,'<br>');el.style.opacity=1;$('#ds1').classList.add('on');$('#ds2').classList.remove('on');$('#demo-cap').textContent=d.v.rf;},350);
+ setTimeout(()=>{el.innerHTML=fmtT(d.v.d,true);$('#ds2').classList.add('on');$('#ds1').classList.remove('on');$('#demo-cap').textContent='✦ '+d.c+' · التقدير: '+d.v.tq;},2300);
+ di=(di+1)%DEMO.length;}
+demo();setInterval(demo,6000);
+function counters(){$$('[data-count]').forEach(el=>{const t=+el.dataset.count;let s0=null;const run=ts=>{if(!s0)s0=ts;const p=Math.min(1,(ts-s0)/1400);el.textContent=Math.round(t*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(run);};requestAnimationFrame(run);});}
+
+const T={1:'منزلة الإيجاز وأحوال التعبير',2:'تعريف الإيجاز والإخلال',3:'إيجاز القصر',4:'إيجاز الحذف وشروطه',5:'حذف المفرد',6:'حذف الجملة والجُمَل'};
+const TS={1:'الإيجاز · المساواة · الإطناب',2:'التقصير · الحذف الرديء',3:'معانٍ كثيرة بلا حذف',4:'القرينة: الحال والمقال',5:'١٥ موضعًا · ٣٩ شاهدًا',6:'المشاهد المطويّة'};
+/* reveal / nav */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');if(e.target.classList.contains('stat')&&!counters.done){counters.done=true;counters();}io.unobserve(e.target);}}),{threshold:.1});
+$$('.reveal').forEach(el=>io.observe(el));
+const nio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)$$('#links a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));}),{rootMargin:'-45% 0px -50% 0px'});
+['map','lessons','khulasa','train'].forEach(id=>nio.observe($('#'+id)));
+addEventListener('scroll',()=>{const h=document.documentElement;$('#scroll-line').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';$('#top-btn').classList.toggle('on',h.scrollTop>600);},{passive:true});
+$('#top-btn').onclick=()=>scrollTo({top:0,behavior:'smooth'});
+
+$('#map-grid').innerHTML=Object.keys(T).map(k=>`<button class="node glass edge" data-open="${k}"><span class="n">${toAr(k)}</span><span><b>${T[k]}</b><small>${TS[k]}</small></span></button>`).join('');
+function openMod(k,scroll){const m=$('#mod-'+k);if(!m)return;m.classList.add('open');if(scroll)setTimeout(()=>m.scrollIntoView({behavior:'smooth',block:'start'}),80);}
+document.addEventListener('click',e=>{const o=e.target.closest('[data-open]');if(o){e.preventDefault();openMod(o.dataset.open,true);return;}
+ const h=e.target.closest('[data-mod]');if(h){h.closest('.mod').classList.toggle('open');}});
+function lessonsUI(){$$('.node').forEach(n=>n.classList.toggle('done',S.lessons.includes(n.dataset.open)));
+ $$('.mod').forEach(m=>m.classList.toggle('done',S.lessons.includes(m.id.slice(4))));
+ $$('.lesson-btn').forEach(b=>{const d=S.lessons.includes(b.dataset.lesson);b.classList.toggle('is',d);b.textContent=d?'✓ فهمتُ هذا المبحث':'◎ فهمتُ هذا المبحث';});
+ $('#prog-bar').style.width=(S.lessons.length/NL*100)+'%';$('#prog-t').textContent=S.lessons.length+'/'+NL;}
+$$('.lesson-btn').forEach(b=>b.onclick=()=>{const l=b.dataset.lesson;if(S.lessons.includes(l))return;S.lessons.push(l);save();lessonsUI();toast('✦ أحسنت! أتممتَ المبحث '+toAr(l));if(S.lessons.length===NL){confetti(200);toast('👑 أتممتَ المباحث كلها!');}mastery();});
+
+
+/* ================= MOUNT VERSE CARDS ================= */
+$$('[data-vs]').forEach(el=>mountVS(el,VS[el.dataset.vs]));
+
+/* ================= M1 SCALE ================= */
+const SC={m:{l:55,mm:55,t:'<b class="q">المساواة:</b> أن تكون العبارة مساويةً للمعنى المراد — اللفظ على قدر المعنى. وهي عند السكاكي واسطة لا تُحمد ولا تُذمّ، وعند ابن الأثير تُسمّى «إيجاز التقدير».'},
+ i:{l:24,mm:92,t:'<b class="q">الإيجاز:</b> أن يكون الأسلوب قليل اللفظ كثير المعنى، بشرط وفاء المعنى ووضوحه.'},
+ t:{l:90,mm:58,t:'<b class="q">الإطناب:</b> أن يزيد اللفظ على قدر المعنى، بشرط ألّا تكون الزيادة عبثًا، بل لفائدة.'}};
+function scR(k){const d=SC[k];$('#sc-l').style.width=d.l+'%';$('#sc-m').style.width=d.mm+'%';$('#sc-out').innerHTML=d.t;$$('[data-sc]').forEach(b=>b.classList.toggle('on',b.dataset.sc===k));}
+$$('[data-sc]').forEach(b=>b.onclick=()=>scR(b.dataset.sc));setTimeout(()=>scR('i'),300);
+
+/* ================= M3 BURST + CHAIN ================= */
+const BU=[['خُذِ الْعَفْوَ',['العفو عمّن أساء','الرفق','المسامحة في الأمور كلّها']],['وَأْمُرْ بِالْعُرْفِ',['صلة الأرحام','صون اللسان عن الكذب والغيبة','غضّ البصر عن المحرّمات']],['وَأَعْرِضْ عَنِ الْجَاهِلِينَ',['الصبر','الحِلم','كظم الغيظ']]];
+$('#burst').innerHTML=BU.map(b=>`<button class="bp"><div class="ph">${b[0]} <small class="muted" style="font-family:Noto Naskh Arabic;font-size:.85rem">← انقر</small></div><div class="kids">${b[1].map((k,i)=>`<span style="animation-delay:${i*.12}s">${k}</span>`).join('')}</div></button>`).join('');
+$$('.bp').forEach(b=>b.onclick=()=>b.classList.toggle('on'));
+const CH=['تشريع القصاص','عِلمُ القاتل أنه سيُقتل','ردعٌ قويّ عن القتل','قلّة القتل','حفظ أرواح كثيرة','حياة'];
+$('#chain').innerHTML=CH.map((c,i)=>`${i?'<span class="ar2">←</span>':''}<span class="cn ${i===CH.length-1?'last':''}">${c}</span>`).join('');
+$('#chain-go').onclick=()=>{const ns=$$('#chain .cn'),as=$$('#chain .ar2');ns.forEach(n=>n.classList.remove('on'));as.forEach(a=>a.classList.remove('on'));
+ ns.forEach((n,i)=>setTimeout(()=>{n.classList.add('on');if(as[i-1])as[i-1].classList.add('on');if(i===ns.length-1)confetti(60);},i*550));};
+
+/* ================= M4 GATE ================= */
+const G=[true,true];function gateR(){const o=$('#gate-out');$$('.tg').forEach((t,i)=>t.classList.toggle('on',G[i]));
+ if(G[0]&&G[1]){o.className='gate-out ok';o.innerHTML='✓ إيجاز حذفٍ بليغ — الحذف مقبول ومحمود';}
+ else{o.className='gate-out no';o.innerHTML='✗ إخلال وحذف رديء — '+(!G[1]?'لا قرينة تدلّ على المحذوف':'الكلام لا يستغني عن المحذوف')+'<br><small style="font-weight:600">مثل بيت الحارث بن حِلِّزة: «والعيشُ خيرٌ في ظلالِ النَّوكِ…»</small>';}}
+$$('.tg').forEach((t,i)=>t.onclick=()=>{G[i]=!G[i];gateR();});gateR();
+
+/* ================= M5 HAZF EXPLORER ================= */
+let hzc=-1;const hzSeen=new Set();
+$('#hz-grid').innerHTML=HZ.map((h,i)=>`<button class="hz" data-hz="${i}"><span class="nn">${toAr(i+1)}</span><b>${h.n}</b><small>${h.k}</small></button>`).join('');
+function hzR(i){hzc=i;hzSeen.add(i);const h=HZ[i];$$('.hz').forEach((b,j)=>{b.classList.toggle('on',j===i);b.classList.toggle('seen',hzSeen.has(j));});
+ const p=$('#hz-panel');p.innerHTML=`<div class="hz-panel"><h4><span class="topic-chip">${toAr(i+1)} من ١٥</span>${h.n}<small class="muted" style="font-size:.9rem">(${h.x.length===1?'شاهد واحد':h.x.length===2?'شاهدان':toAr(h.x.length)+' شواهد'})</small></h4><div id="hz-x"></div>
+  <div class="hz-nav"><button class="btn btn-ghost" data-hn="-1" ${i===0?'disabled':''}>→ النوع السابق</button><button class="btn btn-gold" data-hn="1" ${i===14?'disabled':''}>النوع التالي ←</button></div></div>`;
+ h.x.forEach((v,k)=>{const d=document.createElement('div');$('#hz-x').appendChild(d);mountVS(d,Object.assign({lab:'الشاهد '+toAr(k+1)},v));});
+ $$('[data-hn]',p).forEach(b=>b.onclick=()=>{hzR(hzc+ +b.dataset.hn);p.scrollIntoView({behavior:'smooth',block:'start'});});
+ if(hzSeen.size===15&&!hzR.done){hzR.done=1;toast('👑 استعرضتَ الأنواع الخمسة عشر كلها!');confetti(120);}}
+$$('.hz').forEach(b=>b.onclick=()=>hzR(+b.dataset.hz));hzR(0);
+
+/* ================= M6 STORIES ================= */
+let sti=0,stOpen=false;
+$('#st-tabs').innerHTML=STR.map((s,i)=>`<button class="chip" data-st="${i}">${s.k==='جملة'?'①':'⑤'} ${s.t}</button>`).join('');
+function stR(){const s=STR[sti],box=$('#st-box');$$('[data-st]').forEach(b=>b.classList.toggle('on',+b.dataset.st===sti));
+ const hid=s.sc.filter(x=>Array.isArray(x)).length;
+ box.innerHTML=`<div class="src"><span class="lab">${s.k==='جملة'?'حذف الجملة':'حذف الجُمَل'} · ${s.t}</span><span class="rf">${s.rf}</span></div>
+  <div class="tl">${s.sc.map((x,i)=>Array.isArray(x)?(stOpen?`<div class="sc h pop" style="animation-delay:${i*.12}s"><span class="tag">مشهد مطويّ</span>${esc(x[0])}</div>`:(i>0&&Array.isArray(s.sc[i-1])?'':`<div class="sc fold">◌ ◌ ◌ هنا كلامٌ مطويّ…</div>`)):`<div class="sc">${esc(x)}</div>`).join('')}</div>
+  <div class="tr">${esc(s.m)}</div>
+  <div class="tq">${stOpen?`✦ المحذوف: <b>${toAr(hid)} ${hid>1?'جُمَل':'جملة'}</b> — ${s.sc.filter(x=>Array.isArray(x)).map(x=>x[0]).join('، ')}`:''}</div>
+  ${s.n?`<div class="note" style="margin-bottom:0">${s.n}</div>`:''}
+  <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px"><button class="btn ${stOpen?'btn-ghost':'btn-rose'}" id="st-open">${stOpen?'↺ اطوِ المشاهد':'👁 اكشف المشاهد المطويّة'}</button>${sti<STR.length-1?'<button class="btn btn-gold" id="st-next">القصة التالية ←</button>':''}</div>`;
+ $('#st-open').onclick=()=>{stOpen=!stOpen;stR();};const nx=$('#st-next');if(nx)nx.onclick=()=>{sti++;stOpen=false;stR();};}
+$$('[data-st]').forEach(b=>b.onclick=()=>{sti=+b.dataset.st;stOpen=false;stR();});stR();
+
+/* ================= SUMMARY TABLE ================= */
+const SUM=[['الإيجاز المعيب','الإخلال','٣','والعيشُ خيرٌ في ظلال النَّوك','النّاعم / في ظلال العقل (بلا قرينة)'],['إيجاز القصر','—','٤','ولكم في القصاص حياة','معانٍ كثيرة بلا حذف']]
+ .concat(HZ.map((h,i)=>['حذف المفرد '+toAr(i+1),h.n,toAr(h.x.length),h.x[0].s.replace(/[﴿﴾]/g,'').split(' ').slice(0,6).join(' ')+(h.x[0].s.split(' ').length>6?' …':''),h.x[0].tq.split(' — ')[0]]))
+ .concat([['حذف الجملة','حذف الجملة','٤','فانفجرت منه اثنتا عشرة عينًا','فضرب موسى الحجر'],['حذف الجُمَل','حذف الجُمَل','٣','يوسف أيّها الصدّيق أفتنا','فأرسلوه إليه فأتاه وقال له']]);
+$('#sum-tbl').innerHTML=`<tr><th>القسم</th><th>النوع</th><th>العدد</th><th>الشاهد الأبرز</th><th>المحذوف / المعنى</th></tr>`+SUM.map(r=>`<tr><td><b>${r[0]}</b></td><td>${r[1]}</td><td class="lat">${r[2]}</td><td class="ar" style="font-size:calc(var(--ar) - 8px);line-height:1.7">${r[3]}</td><td><b class="q">${r[4]}</b></td></tr>`).join('');
+
+/* ================= ERRORS ================= */
+const ERR=[['إيجاز القصر فيه حذف','إيجاز القصر لا حذف فيه؛ وإنما تتضمّن العبارة القصيرة معاني كثيرة'],['كلّ حذفٍ إيجازٌ بليغ','لا بدّ من القرينة واستغناء الكلام؛ وإلّا كان إخلالًا وحذفًا رديئًا'],['المساواة مذمومة عند السكاكي','المساواة عنده واسطة لا تُحمد ولا تُذمّ'],['الخلاف بين السكاكي وابن الأثير حقيقي','الخلاف لفظي في التسمية، لا في حقيقة المسمّى'],['المحذوف لا يكون إلا كلمة واحدة','المحذوف مفرد أو جملة أو جُمَل متعدّدة'],['الإيجاز بليغ في كلّ مقام','لا يكون بليغًا إلّا إذا طابق مقتضى الحال']];
+$('#err-grid').innerHTML=ERR.map(e=>`<div class="flip reveal"><div class="flip-in"><div class="face f1"><span class="big">✗</span><p>${e[0]}</p><small class="muted">انقر لترى الصواب</small></div><div class="face f2"><span class="big">✓</span><p>${e[1]}</p></div></div></div>`).join('');
+$$('.flip').forEach(f=>{f.onclick=()=>f.classList.toggle('on');io.observe(f);});
+
+/* =====================================================================
+   EXERCISE DATA (a = index of the correct option in o; options shuffled unless fixed)
+   ===================================================================== */
+const QUIZ=[
+ {t:1,q:'قال بعض العلماء: «البلاغة هي …»',o:['الإيجاز والإطناب','المساواة','الفصل والوصل','التقديم والتأخير'],a:0,e:'لمنزلة هذا الباب قال بعض العلماء: البلاغة هي الإيجاز والإطناب.'},
+ {t:1,q:'مَن أثبت «المساواة» واسطةً بين الإيجاز والإطناب؟',o:['السكاكي ومن تبعه','ابن الأثير','الجاحظ','ابن المعتز'],a:0,e:'السكاكي ومن تبعه أثبتوا المساواة واسطة؛ وابن الأثير نفى الواسطة.'},
+ {t:1,q:'حكم المساواة عند السكاكي:',o:['لا تُحمد ولا تُذمّ','تُحمد دائمًا','تُذمّ دائمًا','هي أعلى طبقات البلاغة'],a:0,e:'المساواة عند السكاكي واسطة لا تُحمد ولا تُذمّ.'},
+ {t:1,q:'الخلاف بين الفريقين في الواسطة خلافٌ:',o:['لفظي في التسمية','حقيقي في المسمّى','في عدد أنواع الحذف','في شروط القرينة'],a:0,e:'خلاصة الكتاب: الخلاف لفظي في التسمية لا في حقيقة المسمّى.'},
+ {t:1,q:'ما يسمّيه السكاكي «مساواة» يسمّيه ابن الأثير:',o:['إيجاز التقدير','إيجاز الحذف','الإطناب','الإخلال'],a:0,e:'قسّم ابن الأثير الإيجاز غير الحذف إلى: إيجاز التقدير (وهو المساواة عند الأولين) وإيجاز القصر.'},
+ {t:1,q:'شرط بلاغة الكلام إيجازًا كان أو مساواة أو إطنابًا:',o:['مطابقته لمقتضى الحال','قِصَره','كثرة ألفاظه','غرابة ألفاظه'],a:0,e:'لا يُعدّ الكلام بليغًا إلّا إذا طابق مقتضى حال المخاطَب.'},
+ {t:2,q:'الإيجاز لغةً:',o:['التقصير','التطويل','الحذف','التكرار'],a:0,e:'يُقال: أوجز في كلامه إذا قصّره، وكلام وجيز: قصير.'},
+ {t:2,q:'إذا لم يَفِ اللفظ الموجز بالمعنى سُمّي:',o:['إخلالًا وحذفًا رديئًا','إيجاز قصر','مساواة','إطنابًا'],a:0,e:'الإيجاز الذي لا يفي بالمعنى إخلال وحذف رديء؛ لأن السامع لا يفهم المراد إلّا بعد فكر طويل.'},
+ {t:2,ar:'وَالعَيْشُ خَيْرٌ فِي ظِلَا ✦ لِ النَّوْكِ مِمَّنْ عَاشَ كَدًّا',q:'ما المحذوف الذي أخلّ بالمعنى في بيت الحارث بن حلّزة؟',o:['«النّاعم» و«في ظلال العقل»','«الحمق»','«خير»','«ممّن»'],a:0,e:'المراد: العيش الناعم في ظلال النوك خير من العيش الشاقّ في ظلال العقل؛ فحُذف «الناعم» و«في ظلال العقل» بلا قرينة.'},
+ {t:2,ar:'عَجِبْتُ لَهُمْ إِذْ يَقْتُلُوْنَ نُفُوْسَهُمْ ✦ وَمَقْتَلُهُمْ عِنْدَ الوَغَى كَانَ أَعْذَرَا',q:'المحذوف في بيت عروة بن الورد:',o:['في السِّلم','في الحرب','نفوسهم','عند الوغى'],a:0,e:'المراد: إذ يقتلون نفوسهم في السلم؛ فحُذف «في السلم» بلا دليل فغمض المعنى.'},
+ {t:3,q:'إيجاز القصر هو:',o:['تضمين العبارات القصيرة معاني كثيرة من غير حذف','حذف كلمة لقرينة','حذف جملة تامّة','زيادة اللفظ لفائدة'],a:0,e:'إيجاز القصر: تقليل الألفاظ وتكثير المعاني بلا حذف.'},
+ {t:3,q:'وصف ابن الأثير إيجاز القصر بأنه:',o:['أعلى طبقات الإيجاز مكانًا وأعوزها إمكانًا','أدنى طبقات الإيجاز','نوع من الإطناب','حذف رديء'],a:0,e:'قال ابن الأثير: هو أعلى طبقات الإيجاز مكانًا، وأعوزها إمكانًا.'},
+ {t:3,ar:'﴿أَلَا لَهُ الْخَلْقُ وَالْأَمْرُ﴾',ref:'الأعراف: ٥٤',q:'ماذا قال ابن عمر رضي الله عنهما بعد قراءتها؟',o:['من بقي له شيء فليطلبه','هذه أعظم آية في القرآن','لا حذف في هذه الآية','في هذه الآية إطناب'],a:0,e:'أي: لم يبقَ شيء خارجًا عن مضمون الكلمتين.'},
+ {t:3,ar:'﴿وَلَكُمْ فِي الْقِصَاصِ حَيَاةٌ﴾',ref:'البقرة: ١٧٩',q:'وجه كون القصاص حياةً:',o:['علمُ القاتل أنه يُقتَل يردعه فيقلّ القتل','لأن القصاص يُحيي المقتول','لأن فيه حذف مضاف','لأن «حياة» مبتدأ مؤخّر فقط'],a:0,e:'إذا علم الإنسان أنه متى قَتَل قُتِل امتنع عن القتل، فيقلّ القتل وتُحفظ الأرواح.'},
+ {t:3,q:'عبارة «الضعيف أمير الركب» تجمع:',o:['آداب السفر والرفق بالضعيف','أحكام الإمارة والولاية','فضل القوة على الضعف','آداب الطعام'],a:0,e:'يسير الركب بسير أضعفهم كأنه أميرهم؛ وهذه معانٍ كثيرة في لفظ قليل.'},
+ {t:4,q:'من شروط الحذف البليغ:',o:['وجود قرينة تدلّ على المحذوف','أن يكون المحذوف جملة','أن يكون في الشعر خاصّة','ألّا يُفهم المعنى'],a:0,e:'الشرطان: استغناء الكلام عن المحذوف، ووجود قرينة تدلّ عليه.'},
+ {t:4,q:'من أدلّة الحذف التي ذكرها الكتاب:',o:['دلالة الحال ودلالة المقال','الوزن والقافية','السجع','دلالة التضمّن فقط'],a:0,e:'أدلّة الحذف كثيرة، منها: دلالة الحال، ودلالة المقال، وغيرهما.'},
+ {t:4,q:'المحذوف في إيجاز الحذف يكون:',o:['مفردًا أو جملة أو جُمَلًا','مفردًا فقط','جملة فقط','حرفًا فقط'],a:0,e:'المحذوف ثلاثة أنواع: كلمة، أو جملة، أو جمل.'},
+ {t:5,q:'عدد مواضع حذف المفرد التي ذكرها الكتاب:',o:['خمسة عشر موضعًا','عشرة مواضع','سبعة مواضع','عشرون موضعًا'],a:0,e:'حذف المفرد أكثر أنواع الحذف، وقد ذكر له الكتاب خمسة عشر موضعًا.'},
+ {t:5,q:'حذف الفاعل في الكتاب يكون في:',o:['فاعل المصدر','فاعل الفعل الماضي','نائب الفاعل','فاعل اسم الفعل'],a:0,e:'مثاله: ﴿لَا يَسْأَمُ الْإِنْسَانُ مِنْ دُعَاءِ الْخَيْرِ﴾ أي: من دعائه الخيرَ.'},
+ {t:5,ar:'﴿وَلَوْ تَرَىٰ إِذْ وُقِفُوا عَلَى النَّارِ﴾',ref:'الأنعام: ٢٧',q:'الغرض البلاغي من حذف جواب «لو»:',o:['ليذهب ذهن السامع كلّ مذهب في تصوّر الهول','للجهل بالجواب','لضرورة الوزن','للتخفيف فقط'],a:0,e:'التقدير: لرأيتَ أمرًا فظيعًا؛ وحُذف ليتصوّر السامع هولًا تضيق عنه العبارة.'},
+ {t:5,ar:'لَأَفْعَلَنَّ',q:'القرينة على حذف القسم:',o:['لام جواب القسم ونون التوكيد','الفعل المضارع وحده','همزة المتكلّم','سياق القصة'],a:0,e:'التقدير: والله لأفعلنّ؛ والقرينة اللام ونون التوكيد.'},
+ {t:6,ar:'﴿كَانَ النَّاسُ أُمَّةً وَاحِدَةً فَبَعَثَ اللَّهُ النَّبِيِّينَ﴾',ref:'البقرة: ٢١٣',q:'المحذوف في الآية:',o:['جملة «فاختلفوا»','مفرد «الرسل»','جواب شرط','قسم'],a:0,e:'التقدير: كان الناس أمّة واحدة فاختلفوا فبعث الله النبيّين.'},
+ {t:6,q:'من القيمة البلاغية لحذف الجُمَل في القصص القرآني:',o:['سرعة القصّ وتركيز الانتباه على لبّ الحدث','إطالة القصة','إخفاء المعنى عن السامع','مراعاة الفاصلة فقط'],a:0,e:'القصّ يثب إلى المشهد المهمّ، ويُشرك عقل السامع في بناء المشاهد المطويّة.'},
+ {t:6,q:'في قصة الهدهد (النمل ٢٨–٣١) انتقل النظم بعد أمر سليمان مباشرةً إلى:',o:['قول الملكة: يا أيها الملأ','ذهاب الهدهد بالكتاب','قراءة الملكة الكتاب','جمع الملكة قومها'],a:0,e:'طُويت جمل: فذهب الهدهد، وحمل الكتاب فألقاه، فأخذته وقرأته، وجمعت قومها؛ ثم: ﴿قَالَتْ يَا أَيُّهَا الْمَلَأُ…﴾.'}
+];
+const TY=HZ.map(h=>h.n).concat(['حذف الجملة','حذف الجُمَل']);
+function tyOpts(c,ds){return[TY[c]].concat(ds.map(d=>TY[d]));}
+const NAW=[
+ [0,[1,3,9],'﴿نَارٌ حَامِيَةٌ﴾','القارعة: ١١','هِيَ نَارٌ حَامِيَةٌ'],
+ [1,[0,9,14],'﴿أُكُلُهَا دَائِمٌ وَظِلُّهَا﴾','الرعد: ٣٥','وَظِلُّهَا دَائِمٌ'],
+ [2,[3,6,14],'﴿لَا يَسْأَمُ الْإِنْسَانُ مِنْ دُعَاءِ الْخَيْرِ﴾','فصّلت: ٤٩','مِنْ دُعَائِهِ الْخَيْرَ'],
+ [3,[2,8,5],'﴿إِنَّ الَّذِينَ اتَّخَذُوا الْعِجْلَ﴾','الأعراف: ١٥٢','اتَّخَذُوا الْعِجْلَ إِلَهًا'],
+ [4,[12,10,3],'﴿قَالُوا تَاللَّهِ تَفْتَأُ تَذْكُرُ يُوسُفَ﴾','يوسف: ٨٥','تَاللَّهِ لَا تَفْتَأُ'],
+ [5,[6,8,0],'﴿وَاسْأَلِ الْقَرْيَةَ﴾','يوسف: ٨٢','وَاسْأَلْ أَهْلَ الْقَرْيَةِ'],
+ [6,[5,7,9],'﴿لِلَّهِ الْأَمْرُ مِنْ قَبْلُ وَمِنْ بَعْدُ﴾','الروم: ٤','مِنْ قَبْلِ ذَلِكَ وَمِنْ بَعْدِهِ'],
+ [7,[9,3,6],'﴿وَلَذِكْرُ اللَّهِ أَكْبَرُ﴾','العنكبوت: ٤٥','أَكْبَرُ مِنْ كُلِّ شَيْءٍ'],
+ [8,[9,0,5],'﴿وَعِنْدَهُمْ قَاصِرَاتُ الطَّرْفِ عِينٌ﴾','الصافات: ٤٨','حُورٌ قَاصِرَاتُ الطَّرْفِ'],
+ [9,[8,6,3],'﴿يَأْخُذُ كُلَّ سَفِينَةٍ غَصْبًا﴾','الكهف: ٧٩','كُلَّ سَفِينَةٍ سَلِيمَةٍ'],
+ [10,[11,13,4],'﴿فَاتَّبِعُونِي يُحْبِبْكُمُ اللَّهُ﴾','آل عمران: ٣١','فَإِنْ تَتَّبِعُونِي يُحْبِبْكُمُ اللَّهُ'],
+ [11,[10,13,1],'﴿وَلَوْ تَرَىٰ إِذِ الظَّالِمُونَ فِي غَمَرَاتِ الْمَوْتِ﴾','الأنعام: ٩٣','لَرَأَيْتَ سُوءَ حَالِهِمْ'],
+ [12,[13,4,10],'لَأَضْرِبَنَّ رِقَابَ الأَعْدَاءِ','مثال','وَاللهِ لَأَضْرِبَنَّ'],
+ [13,[12,11,0],'﴿وَالْفَجْرِ ۝ وَلَيَالٍ عَشْرٍ ۝ وَالشَّفْعِ وَالْوَتْرِ ۝ وَاللَّيْلِ إِذَا يَسْرِ﴾','الفجر: ١–٤','لَتُعَذَّبُنَّ'],
+ [14,[9,2,15],'﴿وَالْمَلَائِكَةُ يَدْخُلُونَ عَلَيْهِمْ مِنْ كُلِّ بَابٍ ۝ سَلَامٌ عَلَيْكُمْ﴾','الرعد: ٢٣–٢٤','قَائِلِينَ: سَلَامٌ عَلَيْكُمْ'],
+ [15,[16,3,11],'﴿فَقُلْنَا اضْرِبْ بِعَصَاكَ الْحَجَرَ ۖ فَانْفَجَرَتْ مِنْهُ اثْنَتَا عَشْرَةَ عَيْنًا﴾','البقرة: ٦٠','فَضَرَبَ مُوسَى الْحَجَرَ (جملة واحدة)'],
+ [16,[15,10,5],'﴿فَأَرْسِلُونِ ۝ يُوسُفُ أَيُّهَا الصِّدِّيقُ أَفْتِنَا﴾','يوسف: ٤٥–٤٦','فَأَرْسَلُوهُ إِلَيْهِ فَأَتَاهُ وَقَالَ لَهُ… (جمل متعدّدة)']
+].map(([c,ds,ar,ref,tq])=>({t:c>14?6:5,ar,ref,q:'ما نوع الحذف في هذا الشاهد؟',o:tyOpts(c,ds),a:0,e:'التقدير: '+tq+'.'}));
+const TAQ=[
+ {t:5,ar:'﴿فَذُوقُوا بِمَا نَسِيتُمْ لِقَاءَ يَوْمِكُمْ هَٰذَا﴾',ref:'السجدة: ١٤',o:['فذوقوا العذابَ','فذوقوا الطعامَ','فذوقوا الرحمةَ','فذوقوا الماءَ'],e:'حُذف المفعول به، والتقدير: فذوقوا العذاب.'},
+ {t:5,ar:'﴿وَأَتْمَمْنَاهَا بِعَشْرٍ﴾',ref:'الأعراف: ١٤٢',o:['بعشرِ ليالٍ','بعشرِ سنين','بعشرِ آيات','بعشرِ رجال'],e:'حُذف المضاف إليه، والتقدير: بعشر ليالٍ؛ لدلالة «ثلاثين ليلة».'},
+ {t:5,ar:'﴿حَتَّىٰ إِذَا فُتِحَتْ يَأْجُوجُ وَمَأْجُوجُ﴾',ref:'الأنبياء: ٩٦',o:['سدُّ يأجوج ومأجوج','قلوبُ يأجوج ومأجوج','أعينُ يأجوج ومأجوج','أفواهُ يأجوج ومأجوج'],e:'حُذف المضاف، والتقدير: سدُّ يأجوج ومأجوج.'},
+ {t:5,ar:'﴿الَّذِي أَطْعَمَهُمْ مِنْ جُوعٍ وَآمَنَهُمْ مِنْ خَوْفٍ﴾',ref:'قريش: ٤',o:['من جوعٍ شديدٍ ومن خوفٍ عظيمٍ','من جوعٍ قليلٍ ومن خوفٍ يسيرٍ','من جوعِ الصيامِ ومن خوفِ الصلاة','من جوعِهم ومن خوفي'],e:'حُذفت الصفة، والتقدير: من جوع شديد ومن خوف عظيم.'},
+ {t:5,ar:'﴿وَكَانَ وَرَاءَهُمْ مَلِكٌ يَأْخُذُ كُلَّ سَفِينَةٍ غَصْبًا﴾',ref:'الكهف: ٧٩',o:['كلَّ سفينةٍ سليمةٍ','كلَّ سفينةٍ معيبةٍ','كلَّ سفينةٍ صغيرةٍ','كلَّ سفينةٍ غارقةٍ'],e:'حُذفت الصفة «سليمة»؛ ولذلك عاب الخضر السفينة لينجّيها من الغصب.'},
+ {t:5,ar:'كُلُّ امْرِئٍ سَتَئِيْمُ مِنْـ ✦ ـهُ العِرْسُ أَوْ مِنْهَا يَئِيْمُ',ref:'الحماسي',o:['كلُّ امرئٍ متزوّجٍ','كلُّ امرئٍ عالمٍ','كلُّ امرئٍ غنيٍّ','كلُّ امرئٍ مسافرٍ'],e:'حُذفت الصفة؛ إذ لا تئيم المرأة إلّا من زوجها، ولا يئيم الرجل إلّا من زوجته.'},
+ {t:5,ar:'﴿يَا عِبَادِيَ الَّذِينَ آمَنُوا إِنَّ أَرْضِي وَاسِعَةٌ فَإِيَّايَ فَاعْبُدُونِ﴾',ref:'العنكبوت: ٥٦',o:['إن لم يتسنَّ لكم إخلاص العبادة في أرضٍ فأخلصوها في غيرها','إن كانت أرضي ضيّقة فاعبدوا غيري','إن آمنتم فلا تعبدوا','إن سافرتم فاتركوا العبادة'],e:'حُذف الشرط، والتقدير كما في الكتاب: إن لم يتسنَّ لكم إخلاص العبادة في أرض فأخلصوها في غيرها.'},
+ {t:5,ar:'﴿وَلَوْ تَرَىٰ إِذِ الظَّالِمُونَ فِي غَمَرَاتِ الْمَوْتِ﴾',ref:'الأنعام: ٩٣',o:['لرأيتَ سوءَ حالهم','لرأيتَ حسنَ حالهم','لنجَوا من الموت','لآمنوا جميعًا'],e:'حُذف جواب الشرط «لو»، والتقدير: لرأيت سوء حالهم.'},
+ {t:5,ar:'﴿وَالنَّازِعَاتِ غَرْقًا ۝ وَالنَّاشِطَاتِ نَشْطًا … فَالْمُدَبِّرَاتِ أَمْرًا﴾',ref:'النازعات: ١–٥',o:['لتُبعَثُنَّ ولتُحاسَبُنَّ','لتموتُنَّ جميعًا','لتنجحُنَّ في الدنيا','لتسافرُنَّ غدًا'],e:'حُذف جواب القسم، والدليل إنكارهم للبعث: ﴿أَإِنَّا لَمَرْدُودُونَ فِي الْحَافِرَةِ﴾.'},
+ {t:5,ar:'﴿وَالْمَلَائِكَةُ يَدْخُلُونَ عَلَيْهِمْ مِنْ كُلِّ بَابٍ ۝ سَلَامٌ عَلَيْكُمْ بِمَا صَبَرْتُمْ﴾',ref:'الرعد: ٢٣–٢٤',o:['قائلين: سلامٌ عليكم','ساكتين: سلامٌ عليكم','خارجين: سلامٌ عليكم','نائمين: سلامٌ عليكم'],e:'حُذفت الحال «قائلين».'},
+ {t:5,ar:'﴿إِنَّ الَّذِينَ اتَّخَذُوا الْعِجْلَ﴾',ref:'الأعراف: ١٥٢',o:['اتّخذوا العجلَ إلهًا','اتّخذوا العجلَ طعامًا','اتّخذوا العجلَ مركبًا','اتّخذوا العجلَ هديّةً'],e:'حُذف المفعول الثاني «إلهًا».'},
+ {t:6,ar:'﴿وَإِذْ يَرْفَعُ إِبْرَاهِيمُ الْقَوَاعِدَ مِنَ الْبَيْتِ وَإِسْمَاعِيلُ رَبَّنَا تَقَبَّلْ مِنَّا﴾',ref:'البقرة: ١٢٧',o:['وهما يقولان','وهما يضحكان','وهما ينامان','وهما يسافران'],e:'حُذفت جملة «وهما يقولان» قبل الدعاء.'}
+].map(x=>({...x,q:'اختر التقدير الصحيح للمحذوف:',a:0}));
+const KO=['إيجاز قصر','إيجاز حذف','إخلال (إيجاز معيب)'];
+const KIND=[
+ ['﴿وَلَكُمْ فِي الْقِصَاصِ حَيَاةٌ﴾','البقرة: ١٧٩',0,3,'معانٍ كثيرة في لفظ قليل بلا حذف.'],
+ ['﴿أَلَا لَهُ الْخَلْقُ وَالْأَمْرُ﴾','الأعراف: ٥٤',0,3,'كلمتان استوعبتا جميع الأشياء والشؤون، بلا حذف.'],
+ ['﴿خُذِ الْعَفْوَ وَأْمُرْ بِالْعُرْفِ وَأَعْرِضْ عَنِ الْجَاهِلِينَ﴾','الأعراف: ١٩٩',0,3,'جمعت مكارم الأخلاق كلّها بلا حذف.'],
+ ['«الضَّعِيْفُ أَمِيْرُ الرَّكْبِ»','',0,3,'جمعت آداب السفر والرفق بالضعيف بلا حذف.'],
+ ['﴿وَاسْأَلِ الْقَرْيَةَ الَّتِي كُنَّا فِيهَا﴾','يوسف: ٨٢',1,5,'حذف المضاف «أهل» بقرينة.'],
+ ['﴿قَالُوا تَاللَّهِ تَفْتَأُ تَذْكُرُ يُوسُفَ﴾','يوسف: ٨٥',1,5,'حذف «لا» النافية في جواب القسم.'],
+ ['﴿وَلَذِكْرُ اللَّهِ أَكْبَرُ﴾','العنكبوت: ٤٥',1,5,'حذف الجار والمجرور «من كلّ شيء».'],
+ ['﴿فَقُلْنَا اضْرِبْ بِعَصَاكَ الْحَجَرَ ۖ فَانْفَجَرَتْ﴾','البقرة: ٦٠',1,6,'حذف جملة «فضرب موسى الحجر».'],
+ ['فَقُلْتُ يَمِيْنُ اللهِ أَبْرَحُ قَاعِدًا','امرؤ القيس',1,5,'حذف «لا»: يمين الله لا أبرح قاعدًا — حذف بقرينة القسم.'],
+ ['وَالعَيْشُ خَيْرٌ فِي ظِلَا ✦ لِ النَّوْكِ مِمَّنْ عَاشَ كَدًّا','الحارث بن حلّزة',2,2,'حُذف «الناعم» و«في ظلال العقل» بلا قرينة؛ فهو إخلال.'],
+ ['عَجِبْتُ لَهُمْ إِذْ يَقْتُلُوْنَ نُفُوْسَهُمْ ✦ وَمَقْتَلُهُمْ عِنْدَ الوَغَى كَانَ أَعْذَرَا','عروة بن الورد',2,2,'حُذف «في السلم» بلا دليل؛ فهو إخلال.'],
+ ['فَإِنَّ المَعْرُوْفَ إِذَا زَجَا كَانَ أَفْضَلَ مِنْهُ إِذَا تَوَفَّرَ وَأَبْطَا','نثر',2,2,'حُذف «قلّ» مع أنها مقابلة لـ«توفّر»؛ فهو إخلال.']
+].map(([ar,ref,a,t,e])=>({t,ar,ref,q:'صنّف هذا الشاهد:',o:KO,a,fixed:true,e}));
+const TFO=['✓ صواب','✗ خطأ'];
+const TFS=[
+ ['إيجاز القصر لا حذف فيه.',0,3,'صحيح؛ هو تضمين العبارات القصيرة معاني كثيرة من غير حذف.'],
+ ['كلّ حذفٍ يُعدّ إيجازًا بليغًا ولو لم توجد قرينة.',1,4,'خطأ؛ لا بدّ من القرينة، وإلّا كان إخلالًا.'],
+ ['المساواة عند السكاكي مذمومة.',1,1,'خطأ؛ هي عنده واسطة لا تُحمد ولا تُذمّ.'],
+ ['التقسيم الثلاثي (إيجاز، مساواة، إطناب) هو الأشهر عند أئمة هذا الفن.',0,1,'صحيح، كما ذكر الكتاب.'],
+ ['الإطناب زيادة اللفظ على المعنى ولو كانت الزيادة عبثًا.',1,1,'خطأ؛ شرطه ألّا تكون الزيادة عبثًا.'],
+ ['في ﴿لَا يَسْأَمُ الْإِنْسَانُ مِنْ دُعَاءِ الْخَيْرِ﴾ حُذف المفعول به.',1,5,'خطأ؛ المحذوف فاعل المصدر: من دعائه الخير.'],
+ ['في ﴿لَوْلَا أَنْتُمْ لَكُنَّا مُؤْمِنِينَ﴾ حُذف الخبر، وتقديره: حاضرون.',0,5,'صحيح؛ والخبر بعد «لولا» يُحذف غالبًا.'],
+ ['أكثر ما يكون حذف الموصوف في باب النداء.',0,5,'صحيح؛ مثل: يا أيها المؤمنون = يا أيها القوم المؤمنون.'],
+ ['في ﴿فَاتَّبِعُونِي يُحْبِبْكُمُ اللَّهُ﴾ حُذف جواب الشرط.',1,5,'خطأ؛ المحذوف هو الشرط: فإن تتّبعوني يحببكم الله.'],
+ ['في قصة موسى مع ابنتي شعيب حُذفت جُمَل متعدّدة.',0,6,'صحيح؛ فذهبتا إلى أبيهما، وقصّتا عليه…، فأرسل إليه، فجاءته إحداهما.'],
+ ['ابن الأثير يثبت المساواة واسطةً بين الإيجاز والإطناب.',1,1,'خطأ؛ ابن الأثير نفى الواسطة، والسكاكي هو الذي أثبتها.'],
+ ['حُذف في ﴿تَاللَّهِ تَفْتَأُ﴾ حرف النفي «لا».',0,5,'صحيح؛ التقدير: تالله لا تفتأ.']
+].map(([q,a,t,e])=>({t,q,o:TFO,a,fixed:true,e}));
+
+const SETS=[
+ {id:'quiz',icon:'🧠',title:'الاختبار الشامل',bm:'Kuiz Komprehensif',items:QUIZ,shuf:true,ins:'٢٥ سؤالًا تغطي المباحث الستة. اختر الإجابة وتنقّل بالأرقام؛ يظهر زرّ Hantar عند السؤال الأخير.'},
+ {id:'naw',icon:'🔍',title:'صيّاد المحذوف',bm:'Kenal Jenis Hazf',items:NAW,shuf:true,ins:'حدّد نوع الحذف في كل شاهد (من الأنواع الخمسة عشر، أو حذف الجملة والجمل).'},
+ {id:'taq',icon:'✍️',title:'أظهِر المحذوف',bm:'Pilih Taqdir',items:TAQ,shuf:true,ins:'اختر التقدير الصحيح للمحذوف في كل شاهد.'},
+ {id:'kind',icon:'⚖️',title:'قصر أم حذف أم إخلال؟',bm:'Klasifikasi Ijaz',items:KIND,shuf:true,ins:'صنّف كل شاهد: إيجاز قصر، أو إيجاز حذف، أو إخلال.'},
+ {id:'tf',icon:'✅',title:'صواب أم خطأ',bm:'Betul / Salah',items:TFS,ins:'احكم على كل عبارة بالصواب أو الخطأ.'}
+];
+
+const TOTAL_Q=SETS.reduce((n,s)=>n+s.items.length,0);
+
+/* =====================================================================
+   EXERCISE ENGINE — Hantar → markah + analisa
+   ===================================================================== */
+const ST={};const LET=['أ','ب','ج','د','هـ','و'];
+function initSet(s){const st={order:s.shuf?shuffle(s.items.map((_,i)=>i)):s.items.map((_,i)=>i),perm:{},ans:{},sub:false,cur:0,t0:Date.now(),t1:0,confirm:false,filter:'all'};
+ s.items.forEach((it,i)=>{const n=it.w?it.w.length+(it.x||[]).length:it.o.length;const idx=[...Array(n).keys()];st.perm[i]=(it.fixed||it.w)?idx:shuffle(idx);});ST[s.id]=st;}
+function buildTabs(){$('#tabs').innerHTML=SETS.map((s,i)=>`<button class="tab ${i?'':'on'}" data-tab="${s.id}">${s.icon} ${s.title}<span class="bs" id="bs-${s.id}"></span></button>`).join('')+`<button class="tab" data-tab="report">🏅 كشف الدرجات</button>`;
+ $('#panes').innerHTML=SETS.map((s,i)=>`<div class="pane ${i?'':'on'}" id="pane-${s.id}"><div class="set glass edge" id="set-${s.id}"></div></div>`).join('');
+ $$('.tab').forEach(t=>t.onclick=()=>{$$('.tab').forEach(x=>x.classList.toggle('on',x===t));$$('.pane').forEach(p=>p.classList.toggle('on',p.id==='pane-'+t.dataset.tab));if(t.dataset.tab==='report')renderReport();});
+ bestBadges();}
+function bestBadges(){SETS.forEach(s=>{const b=S.best[s.id];$('#bs-'+s.id).textContent=b?b.pct+'%':'';});}
+const getSet=id=>SETS.find(s=>s.id===id);
+function render(id){const s=getSet(id),st=ST[id],el=$('#set-'+id);
+ if(st.sub){renderResult(id);return;}
+ const n=st.order.length,answered=Object.keys(st.ans).length;
+ el.innerHTML=`<div class="set-head"><h3>${s.icon} ${s.title} <small class="muted lat" style="font-size:.85rem">${s.bm}</small></h3>
+  <div class="set-meta"><span class="pill">⏱ <span class="lat" id="tm-${id}">00:00</span></span><span class="pill">✍️ <span class="lat">${answered}/${n}</span></span></div></div>
+  <p class="instr">${s.ins}</p>
+  <div class="dots">${st.order.map((qi,k)=>`<button class="dot ${st.ans[qi]!==undefined?'ans':''} ${k===st.cur?'cur':''}" data-k="${k}">${k+1}</button>`).join('')}</div>
+  <div id="qa-${id}"></div>
+  <div class="bar-bot"><button class="btn btn-ghost" data-nav="-1" ${st.cur===0?'disabled':''}>→ السابق</button>
+  ${st.cur===n-1?`<button class="btn btn-rose" data-send>📤 Hantar · إرسال</button>`:`<button class="btn btn-gold" data-nav="1">التالي ←</button>`}</div>
+  ${st.cur===n-1?`<p class="muted" style="text-align:center;margin-top:8px;font-size:.92rem">Ini soalan terakhir. Semak jawapan anda melalui nombor di atas, kemudian tekan <b>Hantar</b>.</p>`:''}
+  ${st.confirm?`<div class="warn">⚠️ Masih ada ${n-answered} soalan belum dijawab (${toAr(n-answered)} بلا إجابة). Tekan <b>Hantar</b> sekali lagi untuk teruskan, atau lengkapkan dahulu.</div>`:''}`;
+ renderQ(id);
+ $$('.dot',el).forEach(d=>d.onclick=()=>{st.cur=+d.dataset.k;render(id);});
+ $$('[data-nav]',el).forEach(b=>b.onclick=()=>{st.cur=Math.max(0,Math.min(n-1,st.cur+ +b.dataset.nav));render(id);});
+ const sb=$('[data-send]',el);if(sb)sb.onclick=()=>submit(id);}
+function qHTML(s,it,qi,st,mode){/* mode: 'ask' */
+ const perm=st.perm[qi],sel=st.ans[qi];
+ let body='';
+ if(it.w){const all=it.w.concat(it.x||[]);body=`<div class="pick-sent">${it.w.map((w,j)=>`<button class="pw ${sel===j?'sel':''}" data-o="${j}">${w}</button>`).join('')}</div>${it.x?`<div class="extras">${it.x.map((w,j)=>{const k=it.w.length+j;return`<button class="opt ${sel===k?'sel':''}" data-o="${k}"><span class="k">${LET[j]}</span>${w}</button>`;}).join('')}</div>`:''}`;}
+ else body=`<div class="opts">${perm.map((oi,j)=>`<button class="opt ${sel===oi?'sel':''}" data-o="${oi}"><span class="k">${LET[j]}</span><span>${it.o[oi]}</span></button>`).join('')}</div>`;
+ return `<div class="qcard"><div class="q-top"><span>السؤال ${toAr(st.cur+1)} من ${toAr(st.order.length)}</span><span class="topic-chip">${T[it.t]}</span></div>
+  ${it.ar?`<div class="q-ar ar">${it.ar}${it.ref?` <span class="ref">[${it.ref}]</span>`:''}</div>`:''}<div class="q-t">${it.q}</div>${body}</div>`;}
+function renderQ(id){const s=getSet(id),st=ST[id],qi=st.order[st.cur],it=s.items[qi];const box=$('#qa-'+id);box.innerHTML=qHTML(s,it,qi,st);
+ $$('[data-o]',box).forEach(b=>b.onclick=()=>{st.ans[qi]=+b.dataset.o;st.confirm=false;
+  const n=st.order.length;if(st.cur<n-1&&Object.keys(st.ans).length<n){setTimeout(()=>{st.cur++;render(id);},320);}render(id);});}
+function submit(id){const st=ST[id],n=st.order.length,answered=Object.keys(st.ans).length;
+ if(answered<n&&!st.confirm){st.confirm=true;render(id);return;}
+ st.sub=true;st.t1=Date.now();const s=getSet(id);
+ let ok=0;s.items.forEach((it,i)=>{if(st.ans[i]===it.a)ok++;});const pct=Math.round(ok/n*100);
+ const prev=S.best[id];if(!prev||pct>=prev.pct)S.best[id]={pct,ok,n,at:new Date().toISOString(),sec:Math.round((st.t1-st.t0)/1000)};
+ S.last=S.last||{};S.last[id]={pct,ok,n};save();bestBadges();mastery();
+ render(id);$('#set-'+id).scrollIntoView({behavior:'smooth',block:'start'});
+ if(pct>=80)confetti(200);toast(pct>=80?'👑 Tahniah! '+pct+'%':'📊 Markah anda: '+pct+'%');}
+function grade(p){return p>=90?['ممتاز','Cemerlang 👑','var(--gold)']:p>=80?['جيد جدًّا','Sangat Baik ✦','var(--ok)']:p>=65?['جيد','Baik','var(--cyan)']:p>=50?['مقبول','Memuaskan','var(--violet)']:['يحتاج إلى مراجعة','Perlu Ulang Kaji','var(--bad)'];}
+function fmt(sec){return String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0');}
+function ansText(it,k){if(k===undefined)return'— لم يُجَب —';if(it.w){const all=it.w.concat(it.x||[]);return all[k];}return it.o[k];}
+function renderResult(id){const s=getSet(id),st=ST[id],el=$('#set-'+id),n=st.order.length;
+ let ok=0,no=0,na=0;const byT={};
+ st.order.forEach(qi=>{const it=s.items[qi],a=st.ans[qi];byT[it.t]=byT[it.t]||{ok:0,n:0};byT[it.t].n++;if(a===undefined)na++;else if(a===it.a){ok++;byT[it.t].ok++;}else no++;});
+ const pct=Math.round(ok/n*100),g=grade(pct),sec=Math.round((st.t1-st.t0)/1000);
+ const weak=Object.keys(byT).filter(t=>byT[t].ok/byT[t].n<.7);
+ const C=2*Math.PI*84;
+ el.innerHTML=`<div class="res"><div class="set-head"><h3>${s.icon} ${s.title} — النتيجة</h3><span class="pill">📋 Analisa Jawapan</span></div>
+  <div class="res-top"><svg class="ring" viewBox="0 0 200 200"><defs><linearGradient id="rg-${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe7a3"/><stop offset="1" stop-color="${pct>=50?'#f2c45a':'#ff5a73'}"/></linearGradient></defs><circle cx="100" cy="100" r="84" fill="none" stroke="var(--line)" stroke-width="14"/><circle id="arc-${id}" cx="100" cy="100" r="84" fill="none" stroke="url(#rg-${id})" stroke-width="14" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C}" transform="rotate(-90 100 100)" style="transition:stroke-dashoffset 1.4s cubic-bezier(.3,1,.4,1);filter:drop-shadow(0 0 8px rgba(242,196,90,.6))"/><text x="100" y="98" text-anchor="middle" font-size="40" id="pc-${id}">0%</text><text x="100" y="128" text-anchor="middle" font-size="16" fill="var(--muted)" style="font-family:Space Grotesk">${ok} / ${n}</text></svg>
+   <div><div class="grade" style="color:${g[2]}">${g[0]}</div><div class="lat" style="text-align:right;font-weight:700;color:var(--muted)">${g[1]}</div>
+   <div class="res-stats"><div class="rs ok"><b>${ok}</b><small>صحيح · Betul</small></div><div class="rs no"><b>${no}</b><small>خطأ · Salah</small></div><div class="rs na"><b>${na}</b><small>بلا إجابة</small></div><div class="rs"><b>${fmt(sec)}</b><small>الوقت · Masa</small></div></div></div></div>
+  <div class="ana"><h4>📊 تحليل الأداء حسب المباحث · Analisa mengikut topik</h4>
+   ${Object.keys(byT).sort((a,b)=>a-b).map(t=>{const r=byT[t],p=Math.round(r.ok/r.n*100),col=p>=80?'var(--ok)':p>=50?'var(--gold)':'var(--bad)';return`<div class="tb"><span>${toAr(t)}. ${T[t]}</span><div class="b"><i style="background:${col};box-shadow:0 0 10px ${col}" data-w="${p}"></i></div><span class="p">${r.ok}/${r.n}</span></div>`;}).join('')}
+   ${weak.length?`<p style="margin-top:10px;font-weight:700">🎯 Topik yang perlu diulang kaji · مباحث تحتاج إلى مراجعة:</p><div class="weak">${weak.map(t=>`<button class="chip" data-open="${t}">↩ ${toAr(t)}. ${T[t]}</button>`).join('')}</div>`:`<p style="margin-top:10px;color:var(--ok);font-weight:700">✦ Hebat! Semua topik dikuasai (≥70%).</p>`}
+  </div>
+  <div class="filters"><button class="chip ${st.filter==='all'?'on':''}" data-f="all">الكل (${n})</button><button class="chip ${st.filter==='no'?'on':''}" data-f="no">✗ الخطأ وبلا إجابة (${no+na})</button><button class="chip ${st.filter==='ok'?'on':''}" data-f="ok">✓ الصحيح (${ok})</button></div>
+  <div id="rv-${id}">${st.order.map((qi,k)=>{const it=s.items[qi],a=st.ans[qi],c=a===undefined?'na':a===it.a?'ok':'no';if(st.filter==='ok'&&c!=='ok')return'';if(st.filter==='no'&&c==='ok')return'';
+    return`<div class="rv ${c}"><div class="rv-top"><span>${toAr(k+1)}. ${it.q} <span class="topic-chip">${T[it.t]}</span></span><span class="mark">${c==='ok'?'✓ صحيح':c==='no'?'✗ خطأ':'— بلا إجابة'}</span></div>
+     ${it.ar?`<div class="ar">${it.ar}${it.ref?` <span class="ref">[${it.ref}]</span>`:''}</div>`:''}
+     <div class="ya">إجابتك: ${ansText(it,a)}</div>${c!=='ok'?`<div class="ca">✓ الإجابة الصحيحة: ${ansText(it,it.a)}</div>`:''}
+     <div class="${it.m?'model':'ex'}">${it.m?'':'💡 '}${it.e}</div></div>`;}).join('')}</div>
+  <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px"><button class="btn btn-gold" data-retry>🔁 Cuba Lagi · أعد المحاولة</button><button class="btn btn-ghost" data-rep>🏅 Lihat Slip Keputusan</button></div></div>`;
+ requestAnimationFrame(()=>{setTimeout(()=>{$('#arc-'+id).style.strokeDashoffset=C-C*pct/100;$$('.tb .b i',el).forEach(i=>i.style.width=i.dataset.w+'%');},60);
+  let v=0;const step=()=>{v=Math.min(pct,v+Math.max(1,Math.ceil(pct/40)));$('#pc-'+id).textContent=v+'%';if(v<pct)requestAnimationFrame(step);};step();});
+ $$('[data-f]',el).forEach(b=>b.onclick=()=>{st.filter=b.dataset.f;renderResult(id);});
+ $('[data-retry]',el).onclick=()=>{initSet(s);render(id);};
+ $('[data-rep]',el).onclick=()=>$('.tab[data-tab="report"]').click();}
+setInterval(()=>{SETS.forEach(s=>{const st=ST[s.id],e=$('#tm-'+s.id);if(st&&!st.sub&&e)e.textContent=fmt(Math.round((Date.now()-st.t0)/1000));});},1000);
+
+/* ================= REPORT CARD ================= */
+function renderReport(){const p=$('#pane-report');const rows=SETS.map(s=>{const b=S.best[s.id];return{s,b};});
+ const done=rows.filter(r=>r.b),avg=done.length?Math.round(done.reduce((n,r)=>n+r.b.pct,0)/done.length):0;
+ const totOk=done.reduce((n,r)=>n+r.b.ok,0),totN=done.reduce((n,r)=>n+r.b.n,0);const g=grade(avg);
+ p.innerHTML=`<div class="report glass edge" id="report-card"><div class="rep-head"><span class="kicker">RESULT SLIP · كشف الدرجات</span><h3 class="gold-text">كشف درجات باب الإيجاز</h3><p class="muted">Slip Keputusan Latihan al-Ijaz · Balaghah — FKI UniSZA</p></div>
+  <div class="rep-fields"><div class="fld"><label>الاسم · Nama</label><input id="r-name" value="${esc(S.student.name)}" placeholder="Nama penuh"></div><div class="fld"><label>رقم القيد · No. Matrik</label><input id="r-mat" value="${esc(S.student.matric)}" placeholder="No. matrik" class="lat"></div><div class="fld"><label>المجموعة · Kumpulan</label><input id="r-grp" value="${esc(S.student.group)}" placeholder="Kumpulan"></div></div>
+  <div class="tbl"><table><tr><th>التدريب · Latihan</th><th>أفضل درجة</th><th>النسبة</th><th>الحالة</th></tr>
+  ${rows.map(r=>`<tr><td><b>${r.s.icon} ${r.s.title}</b><br><small class="muted lat">${r.s.bm}</small></td><td class="lat">${r.b?r.b.ok+' / '+r.b.n:'—'}</td><td class="lat"><b>${r.b?r.b.pct+'%':'—'}</b></td><td>${r.b?`<span class="st-ok">✓ ${grade(r.b.pct)[0]}</span>`:'<span class="st-no">لم يُنجَز · Belum</span>'}</td></tr>`).join('')}</table></div>
+  <div class="rep-total"><div style="text-align:center"><small class="muted">المعدل العام · Purata</small><br><b>${avg}%</b></div><div style="text-align:center"><small class="muted">مجموع الصحيح</small><br><b class="lat" style="font-size:1.8rem">${totOk}/${totN||TOTAL_Q}</b></div><div style="text-align:center"><small class="muted">التقدير</small><br><span class="grade" style="color:${g[2]};font-size:1.8rem">${done.length?g[0]:'—'}</span></div></div>
+  <p class="muted" style="text-align:center;margin-top:10px;font-size:.9rem">Selesai ${done.length}/${SETS.length} latihan · المباحث المفهومة: ${S.lessons.length}/${NL} · ${new Date().toLocaleDateString('ms-MY')}</p>
+  <div style="display:flex;gap:10px;justify-content:center;margin-top:14px;flex-wrap:wrap"><button class="btn btn-gold" id="r-print">🖨️ Cetak / Simpan PDF</button><button class="btn btn-ghost" id="r-reset">🗑 Set semula markah</button></div>
+  <p class="credit" style="text-align:center;margin-top:14px">DR. MOHD TAUFIQ BIN ABD TALIB · FKI UNISZA</p></div>`;
+ [['r-name','name'],['r-mat','matric'],['r-grp','group']].forEach(([i,k])=>$('#'+i).addEventListener('input',e=>{S.student[k]=e.target.value;save();}));
+ $('#r-print').onclick=()=>window.print();
+ $('#r-reset').onclick=function(){if(this.dataset.c){S.best={};save();bestBadges();mastery();renderReport();toast('Markah telah diset semula');}else{this.dataset.c=1;this.textContent='⚠ Tekan sekali lagi untuk sahkan';}};}
+function mastery(){const done=SETS.filter(s=>S.best[s.id]);const ex=done.length?done.reduce((n,s)=>n+S.best[s.id].pct,0)/SETS.length:0;const m=Math.round(ex*.75+S.lessons.length/NL*25);$('#nav-m').textContent=m+'%';$('#nav-mb').style.width=m+'%';}
+
+/* ================= INIT ================= */
+applyTheme();applyFont();lessonsUI();buildTabs();SETS.forEach(s=>{initSet(s);render(s.id);});mastery();
+</script>
+</body>
+</html>
